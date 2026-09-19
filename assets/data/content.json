@@ -1,110 +1,138 @@
 {
   "news": [
     {
-      "id": "news-1",
-      "title": "Divine Leads Media Deploys DLM ResultDesk Across First Wave of Pilot Schools",
-      "category": "Field Deployment",
-      "tags": ["Field Deployment", "ResultDesk", "Lagos"],
-      "status": "published",
-      "date": "September 12, 2026",
-      "readTime": "3 min read",
-      "author": "Joshua Eesuola",
-      "image": "https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=800&q=80",
-      "summary": "Our field engineering team completed the deployment of DLM ResultDesk across partner secondary schools, ending manual broadsheet errors for over 1,200 students.",
-      "content": "Our field deployment team has successfully completed the installation and configuration of DLM ResultDesk across our initial partner secondary schools in Lagos.\n\nTeachers were trained on entering continuous assessments (CA) and examination marks directly into the system. Within minutes, the software computed weighted averages, class positions, and generated standard student report sheets.\n\nInitial feedback highlights that result compilation time was reduced from 2 weeks of manual calculations to under 2 hours."
-    },
-    {
-      "id": "news-2",
-      "title": "Low-Power Computer Lab Hardware Bench-Testing Completed",
-      "category": "Hardware & Lab",
-      "tags": ["Hardware & Lab", "Solar", "Infrastructure"],
-      "status": "published",
-      "date": "August 28, 2026",
-      "readTime": "4 min read",
-      "author": "DLM Hardware Lab",
-      "image": "https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=800&q=80",
-      "summary": "We bench-tested 40 low-power desktop PCs running on a single 1.5kVA solar inverter system to guarantee zero disruptions during school CBT exams.",
-      "content": "Power reliability remains the number one bottleneck for Nigerian school computer labs. In preparation for upcoming term examinations, our lab technicians stress-tested 40 ultra-low-power desktop setups.\n\nOperating at an average load of only 18W per station, the entire 40-seater lab operated continuously for 6 hours on a modest solar inverter backup bank without a single system reboot.\n\nThis architecture ensures Nigerian schools can host JAMB and internal CBT mock exams without spending millions on daily generator diesel costs."
-    },
-    {
       "id": "news-3",
       "title": "Practical Digital Economy & AI Workshop for Secondary Students",
       "category": "Learner Skills",
-      "tags": ["Learner Skills", "AI Training", "Students"],
+      "tags": [
+        "Learner Skills",
+        "AI Training",
+        "Students"
+      ],
       "status": "published",
       "date": "August 15, 2026",
       "readTime": "2 min read",
       "author": "Joshua Eesuola",
       "image": "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=800&q=80",
       "summary": "Over 180 secondary school students completed our hands-on digital skills seminar, learning practical computing and how to use educational AI tools safely.",
-      "content": "We hosted our quarterly 'Practical Digital Skills for Future Leaders' workshop. Students moved beyond rote textbook computer studies to practical keyboard mastery, structured document creation, and introductory AI logic.\n\nParticipants learned how to prompt AI assistants for step-by-step problem breakdown in mathematics and sciences while learning the critical difference between factual verification and hallucination."
+      "content": "We hosted our quarterly 'Practical Digital Skills for Future Leaders' workshop. Students moved beyond rote textbook computer studies to practical keyboard mastery, structured document creation, and introductory AI logic.\n\nParticipants learned how to prompt AI assistants for step-by-step problem breakdown in mathematics and sciences while learning the critical difference between factual verification and hallucination.",
+      "coverAlt": "Practical Digital Economy & AI Workshop for Secondary Students"
+    },
+    {
+      "id": "news-2",
+      "title": "Low-Power Computer Lab Hardware Bench-Testing Completed",
+      "category": "Hardware & Lab",
+      "tags": [
+        "Hardware & Lab",
+        "Solar",
+        "Infrastructure"
+      ],
+      "status": "published",
+      "date": "August 28, 2026",
+      "readTime": "4 min read",
+      "author": "DLM Hardware Lab",
+      "image": "https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=800&q=80",
+      "summary": "We bench-tested 40 low-power desktop PCs running on a single 1.5kVA solar inverter system to guarantee zero disruptions during school CBT exams.",
+      "content": "Power reliability remains the number one bottleneck for Nigerian school computer labs. In preparation for upcoming term examinations, our lab technicians stress-tested 40 ultra-low-power desktop setups.\n\nOperating at an average load of only 18W per station, the entire 40-seater lab operated continuously for 6 hours on a modest solar inverter backup bank without a single system reboot.\n\nThis architecture ensures Nigerian schools can host JAMB and internal CBT mock exams without spending millions on daily generator diesel costs.",
+      "coverAlt": "Low-Power Computer Lab Hardware Bench-Testing Completed"
+    },
+    {
+      "id": "news-1",
+      "title": "Divine Leads Media Deploys DLM ResultDesk Across First Wave of Pilot Schools",
+      "category": "Field Deployment",
+      "tags": [
+        "Field Deployment",
+        "ResultDesk",
+        "Lagos"
+      ],
+      "status": "published",
+      "date": "September 12, 2026",
+      "readTime": "3 min read",
+      "author": "Joshua Eesuola",
+      "image": "https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=800&q=80",
+      "summary": "Our field engineering team completed the deployment of DLM ResultDesk across partner secondary schools, ending manual broadsheet errors for over 1,200 students.",
+      "content": "Our field deployment team has successfully completed the installation and configuration of DLM ResultDesk across our initial partner secondary schools in Lagos.\n\nTeachers were trained on entering continuous assessments (CA) and examination marks directly into the system. Within minutes, the software computed weighted averages, class positions, and generated standard student report sheets.\n\nInitial feedback highlights that result compilation time was reduced from 2 weeks of manual calculations to under 2 hours.",
+      "coverAlt": "Divine Leads Media Deploys DLM ResultDesk Across First Wave of Pilot Schools"
     }
   ],
   "articles": [
     {
       "id": "art-1",
-      "title": "Why Nigerian Schools Must Shift from Manual Broadsheets to Offline Software",
-      "tag": "School Administration",
-      "tags": ["School Administration", "Grading", "Productivity"],
-      "status": "published",
-      "date": "September 2026",
-      "readTime": "5 min read",
+      "title": "How AI and Simple Tech Can Save Nigerian Teachers Over 100 Hours Every Term",
       "author": "Eesuola Joshua Damilare",
       "role": "Founder & Lead Technologist",
-      "cover": "https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=1000&q=80",
-      "coverAlt": "Classroom broadsheet examination calculation",
-      "summary": "Manual broadsheet calculation costs Nigerian teachers hundreds of hours each term and leads to arithmetic errors. Here is why offline school software is the proven solution.",
-      "content": "# Why Nigerian Schools Must Shift from Manual Broadsheets to Offline Software\n\nAt the end of every school term in Nigeria, teachers face the dreaded 'exam processing week'. Teachers spend countless late nights manually calculating continuous assessment (CA) scores, exam totals, weighted averages, and class rankings with pocket calculators.\n\n## The Real Bottlenecks of Manual Calculation\n\n1. **Arithmetic Human Error**: Calculating positions across 40 to 60 students in 12 different subjects manually results in frequent mathematical discrepancies.\n2. **Teacher Burnout**: Valuable teaching and student mentoring time is consumed by repetitive arithmetic.\n3. **Damaged Paper Records**: Water damage, lost broadsheets, and torn files make historical student record retrieval nearly impossible.\n\n## Why Offline Software is Essential for Nigeria\n\nCloud-only school portals often fail in Nigeria because of unstable internet connectivity and expensive monthly subscriptions. **DLM ResultDesk** runs 100% offline, allowing teachers to record scores without waiting for network bars, instantly producing error-free broadsheets and report cards."
+      "date": "September 08, 2026",
+      "readTime": "4 min read",
+      "tag": "Software & AI",
+      "tags": [
+        "Software & AI",
+        "DLM ResultDesk",
+        "TeacherTools",
+        "EdTech"
+      ],
+      "status": "published",
+      "cover": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1000&q=80",
+      "coverAlt": "Modern educational technology saving teacher time",
+      "summary": "Grading exams and calculating student broadsheets by hand is exhausting. Here is how modern software and AI tools solve this problem easily.",
+      "content": "Every term in Nigeria, teachers face the same heavy task: adding continuous assessment scores, calculating subject positions, working out class averages, and writing remarks on hundreds of paper report cards.\n\nWhen teachers spend all their free time doing manual arithmetic, they have little energy left to prepare inspiring lessons.\n\n### Why DLM ResultDesk Changes Everything\nWe built DLM ResultDesk specifically for how Nigerian schools operate:\n1. **Enter Scores Once**: Teachers simply type in continuous assessment (CA) and exam marks.\n2. **Automatic Calculations**: The computer calculates totals, percentages, grade letters (A1 to F9), and class positions instantly.\n3. **Print Ready Report Cards**: Clean, professional report cards with school crests and signatures are generated with one click.\n4. **Works Offline**: You do not need internet or data subscription to compute grades."
     },
     {
       "id": "art-2",
-      "title": "Sizing Solar Inverter Systems for School Computer Labs in Nigeria",
-      "tag": "Hardware & Lab",
-      "tags": ["Hardware & Lab", "Solar Power", "Cost Savings"],
+      "title": "Setting Up a Reliable Computer Lab in a Nigerian School: What Principals Need to Know",
+      "author": "DLM Technical Team",
+      "role": "Equipment & Infrastructure Group",
+      "date": "August 18, 2026",
+      "readTime": "5 min read",
+      "tag": "Equipment Supply",
+      "tags": [
+        "Equipment Supply",
+        "ComputerLab",
+        "CBTExams",
+        "PowerBackup"
+      ],
       "status": "published",
-      "date": "August 2026",
-      "readTime": "6 min read",
-      "author": "DLM Hardware Lab",
-      "role": "Technical Infrastructure Team",
-      "cover": "https://images.unsplash.com/photo-1508873696983-2df57046475a?auto=format&fit=crop&w=1000&q=80",
-      "coverAlt": "Solar panels and inverter technology",
-      "summary": "Running generators for school computer labs is financially unsustainable. Learn how to calculate exact power wattage and size battery backups for uninterrupted lab sessions.",
-      "content": "# Sizing Solar Inverter Systems for School Computer Labs in Nigeria\n\nWith rising fuel costs across Nigeria, running a 5kVA or 10kVA petrol generator just to power a 30-computer lab for a 45-minute lesson is no longer sustainable.\n\n## The Math of Low-Power Labs\n\nTraditional bulky desktop towers consume between 120W and 200W each. Equipping a lab with 30 traditional desktops requires over 4,500 Watts of power.\n\nBy contrast, **DLM Certified Low-Power Desktops** consume only 15W to 25W each:\n\n- 30 Low-Power Systems = ~600 Watts total load.\n- A standard 1.5kVA or 2.5kVA Pure Sine Wave Inverter with two 200Ah deep-cycle tubular batteries can easily power the entire computer lab for 4 to 6 full hours.\n\nSchools save over ₦250,000 monthly in diesel costs while eliminating examination interruptions."
+      "cover": "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1000&q=80",
+      "coverAlt": "School computer laboratory with durable desktop stations",
+      "summary": "A straightforward guide to choosing durable computers, setting up local networks, and planning reliable power backup for school CBT centers.",
+      "content": "Many Nigerian school owners want to set up modern computer laboratories, but fear wasting money on fragile systems or dealing with frequent power cuts.\n\nAt Divine Leads Media, we supply and install school technology equipment with three key rules:\n1. **Durable Business-Grade Hardware**: We recommend refurbished and new desktop computers designed to handle heavy student use and dusty environments.\n2. **Clean Power Inverters**: Connecting school systems to an inverter with solar backup prevents sudden shutdowns that damage hard drives during power cuts.\n3. **Local Offline Networking**: Setting up a local server allows an entire lab of 30 to 100 computers to run CBT practice tests smoothly without depending on internet connections."
     },
     {
       "id": "art-3",
-      "title": "How to Safely Introduce AI Learning Tools to Secondary School Learners",
-      "tag": "Digital Skills & AI",
-      "tags": ["Digital Skills & AI", "Education", "Students"],
-      "status": "published",
-      "date": "August 2026",
-      "readTime": "4 min read",
+      "title": "Teaching Nigerian Students How to Use AI as a Study Partner, Not a Shortcut",
       "author": "Eesuola Joshua Damilare",
-      "role": "Lead Technologist",
+      "role": "Founder & Educational Researcher",
+      "date": "July 14, 2026",
+      "readTime": "4 min read",
+      "tag": "AI Skills",
+      "tags": [
+        "AI Skills",
+        "StudentLearning",
+        "DigitalLiteracy",
+        "FutureSkills"
+      ],
+      "status": "published",
       "cover": "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=1000&q=80",
-      "coverAlt": "Students learning in modern computer lab",
+      "coverAlt": "Students collaborating with digital AI learning tools",
       "summary": "Artificial Intelligence is already here. Here is how we teach secondary school learners to use AI to understand difficult subjects and build real skills.",
-      "content": "# How to Safely Introduce AI Learning Tools to Secondary School Learners\n\nArtificial intelligence is rapidly reshaping the future of work. In Nigeria, our students should not just be passive consumers of technology; they must learn to utilize digital and AI tools to master school subjects and build problem-solving capabilities.\n\n## Core Principles for Classroom AI Training\n\n1. **AI as a Socratic Tutor, Not an Answer Bot**: Teach students to ask AI to explain concepts with local Nigerian analogies rather than copying essay answers.\n2. **Verification & Fact Checking**: Show students examples of AI hallucination so they develop critical thinking.\n3. **Practical Keyboard & Digital Fluency**: Theoretical knowledge must be grounded with fast typing, document formatting, and local computing fluency."
+      "content": "Artificial intelligence is changing how the world works. In Nigeria, our students should not just be passive consumers of foreign technology; they need to understand how to use digital tools and AI to learn faster.\n\nIn our workshops, we guide students on:\n- Using AI to explain complicated science and math topics in simple words.\n- Checking facts and verifying sources so they do not copy incorrect answers.\n- Learning computational thinking and logic to solve everyday problems."
     }
   ],
   "downloads": [
     {
-      "id": "dl-1",
-      "name": "DLM ResultDesk Desktop Installer",
-      "version": "v1.4.2",
-      "platform": "Windows 11, 10, 8, 7 (32-bit & 64-bit)",
-      "tag": "School Software",
-      "size": "48.6 MB",
+      "id": "dl-3",
+      "name": "DLM SecureVote Offline Election Suite",
+      "version": "v2.0.1",
+      "platform": "Windows, Linux & Offline Local Server",
+      "tag": "Election Software",
+      "size": "62.4 MB",
       "date": "September 2026",
-      "checksum": "sha256: 7f83b1657ff1fc53b92dc182563a92548231c9a6",
-      "description": "The complete offline grading, broadsheet calculation, and report card software for Nigerian Nursery, Primary, and Secondary schools.",
-      "downloadUrl": "assets/downloads/ResultDesk-Setup.exe",
+      "checksum": "sha256: e512a89c02d18471fa0919bbda841029182047ef",
+      "description": "Secure, offline election infrastructure for student prefect elections, university union voting, and school leadership polls.",
+      "downloadUrl": "#download-securevote",
       "features": [
-        "Automatic broadsheet computation and student ranking",
-        "Built-in WAEC, NECO, and BECE grading standards",
-        "Psychomotor and behavioral evaluation sheets",
-        "Batch export and print clean PDF student report cards",
-        "100% offline — no internet connection required"
+        "Tamper-proof cryptographic ballot verification",
+        "Works completely offline on local school Wi-Fi or LAN",
+        "Real-time instant result tabulation and audit log"
       ]
     },
     {
@@ -125,21 +153,70 @@
       ]
     },
     {
-      "id": "dl-3",
-      "name": "DLM SecureVote Offline Election Suite",
-      "version": "v2.0.1",
-      "platform": "Windows, Linux & Offline Local Server",
-      "tag": "Election Software",
-      "size": "62.4 MB",
+      "id": "dl-1",
+      "name": "DLM ResultDesk Desktop Installer",
+      "version": "v1.4.2",
+      "platform": "Windows 11, 10, 8, 7 (32-bit & 64-bit)",
+      "tag": "School Software",
+      "size": "48.6 MB",
       "date": "September 2026",
-      "checksum": "sha256: e512a89c02d18471fa0919bbda841029182047ef",
-      "description": "Secure, offline election infrastructure for student prefect elections, university union voting, and school leadership polls.",
-      "downloadUrl": "#download-securevote",
+      "checksum": "sha256: 7f83b1657ff1fc53b92dc182563a92548231c9a6",
+      "description": "The complete offline grading, broadsheet calculation, and report card software for Nigerian Nursery, Primary, and Secondary schools.",
+      "downloadUrl": "assets/downloads/ResultDesk-Setup.exe",
       "features": [
-        "Tamper-proof cryptographic ballot verification",
-        "Works completely offline on local school Wi-Fi or LAN",
-        "Real-time instant result tabulation and audit log"
+        "Automatic broadsheet computation and student ranking",
+        "Built-in WAEC, NECO, and BECE grading standards",
+        "Psychomotor and behavioral evaluation sheets",
+        "Batch export and print clean PDF student report cards",
+        "100% offline — no internet connection required"
       ]
+    },
+    {
+      "id": "dl-1789843349358",
+      "name": "DLM FaithGuard",
+      "version": "1",
+      "platform": "Android",
+      "tag": "Media Production",
+      "size": "18",
+      "date": "September 2026",
+      "downloadUrl": "#download-dlmfaithguard",
+      "description": "DLM FaithGuard is a privacy-first app designed to help you guard your attention and use your phone more intentionally. It helps reduce digital distractions while creating space for prayer, Scripture, spiritual growth, focused learning, and intentional knowledge retention through Focus Mode, Scripture Memorizer, and Concept Memorizer.",
+      "features": [
+        "Focus Mode",
+        "Scripture Memorizer",
+        "Concept Memorizer",
+        "Guarded Apps",
+        "Scripture Reader",
+        "Guided Prayer",
+        "Smart Memorization & Accuracy Tracking",
+        "Custom Mastery Periods & Reminders",
+        "Private, Local-First Data",
+        "No Ads or Behavioral Tracking"
+      ],
+      "createdAt": "2026-09-19T18:42:29.358Z",
+      "updatedAt": "2026-09-19T18:43:10.540Z"
+    }
+  ],
+  "webinars": [
+    {
+      "id": "web-1",
+      "title": "Transforming Nigerian School Records with Tech and AI",
+      "type": "Online Webinar",
+      "date": "October 15, 2026",
+      "time": "11:00 AM (West Africa Time)",
+      "speakers": "Eesuola Joshua Damilare & Experienced School Principals",
+      "description": "Practical training for school owners and administrators on moving away from manual paper broadsheets to fast, automated software that saves time and money.",
+      "link": "#register-web-1"
+    },
+    {
+      "id": "web-2",
+      "title": "Equipping Your School with Reliable CBT and Computer Lab Gear",
+      "type": "Live Workshop",
+      "date": "November 07, 2026",
+      "time": "02:00 PM (West Africa Time)",
+      "speakers": "DLM Technical and Hardware Team",
+      "description": "Everything school leaders need to know about setting up durable computer labs, solar backup power, and local CBT exam networks without overspending.",
+      "link": "#register-web-2"
     }
   ]
 }
