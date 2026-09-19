@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Downloads &amp; Releases — Divine Leads Media</title>
+  <meta name="description" content="Download DLM ResultDesk for Nigerian school report cards and broadsheets, ServiceFlow live screen timer, and free school templates.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M26,48 V20 H48 A28,28 0 0 1 74,36' fill='none' stroke='%230D1B2A' stroke-width='11' stroke-linecap='round'/%3E%3Cpath d='M26,52 V80 H48 A28,28 0 0 0 74,64' fill='none' stroke='%230D1B2A' stroke-width='11' stroke-linecap='round'/%3E%3Ccircle cx='43' cy='50' r='14' fill='%232563EB'/%3E%3Crect x='76' y='44' width='11' height='11' rx='3' fill='%232563EB'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container-wide nav-container">
+      <a href="index.html" class="brand-logo">
+        <svg class="brand-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <path d="M26,48 V20 H48 A28,28 0 0 1 74,36" fill="none" stroke="#FFFFFF" stroke-width="11" stroke-linecap="round"/>
+          <path d="M26,52 V80 H48 A28,28 0 0 0 74,64" fill="none" stroke="#FFFFFF" stroke-width="11" stroke-linecap="round"/>
+          <circle cx="43" cy="50" r="14" fill="#2563EB"/>
+          <rect x="76" y="44" width="11" height="11" rx="3" fill="#2563EB"/>
+        </svg>
+        <div class="brand-text">
+          <span class="brand-title">DIVINE LEADS</span>
+          <span class="brand-subtitle">M E D I A</span>
+        </div>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="downloads.html" class="active">Downloads</a></li>
+        <li><a href="staff.html">Our Staff</a></li>
+        <li><a href="news.html">News</a></li>
+        <li><a href="articles.html">Articles</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="#releasesContainer" class="btn btn-primary btn-sm">Direct Downloads</a>
+        <button class="mobile-toggle" aria-label="Open Navigation">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-nav-drawer">
+    <button class="close-drawer" style="align-self: flex-end; background:none; border:none; color:#fff; font-size:2rem; cursor:pointer;" aria-label="Close">✕</button>
+    <ul class="mobile-links">
+      <li><a href="index.html" class="close-drawer">Home</a></li>
+      <li><a href="about.html" class="close-drawer">About Us</a></li>
+      <li><a href="downloads.html" class="close-drawer active">Downloads &amp; Releases</a></li>
+      <li><a href="staff.html" class="close-drawer">Our Staff</a></li>
+      <li><a href="news.html" class="close-drawer">News &amp; Events</a></li>
+      <li><a href="articles.html" class="close-drawer">Articles &amp; Guides</a></li>
+      <li><a href="contact.html" class="close-drawer">Contact Us</a></li>
+    </ul>
+  </div>
+
+  <!-- Hero Header -->
+  <section class="section" style="padding-top: 150px; padding-bottom: 40px;">
+    <div class="container">
+      <div class="badge">OFFICIAL DLM SOFTWARE RELEASES</div>
+      <h1 class="hero-headline" style="font-size: clamp(2.4rem, 5vw, 4.2rem); margin-top: 12px;">
+        Software Releases &amp; <span class="highlight">Downloads</span>.
+      </h1>
+      <p class="hero-subhead" style="max-width: 780px;">
+        Download official, verified offline school software developed by Divine Leads Media. All our software runs completely offline with zero internet needed.
+      </p>
+
+      <!-- Category Filter Tabs -->
+      <div style="display:flex; gap:10px; margin-top: 24px; flex-wrap:wrap;" id="downloadCategoryFilters">
+        <button class="btn btn-primary btn-sm" data-filter="all">All Packages</button>
+        <button class="btn btn-secondary btn-sm" data-filter="School Software">School Software</button>
+        <button class="btn btn-secondary btn-sm" data-filter="Election Software">Election Infrastructure</button>
+        <button class="btn btn-secondary btn-sm" data-filter="Free School Resource">Free School Templates</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Releases List -->
+  <section class="section" style="padding-top: 10px;">
+    <div class="container" id="releasesContainer">
+      <!-- Populated dynamically from db.js -->
+    </div>
+  </section>
+
+  <!-- School Setup Support -->
+  <section class="section" style="background: var(--dlm-navy); border-top: 1px solid var(--border-subtle);">
+    <div class="container" style="display:grid; grid-template-columns: 1.2fr 0.8fr; gap: 36px; align-items:center;">
+      <div>
+        <div class="badge">NEED HELP SETTING UP?</div>
+        <h3 class="section-title" style="font-size: 1.8rem; margin-top: 10px;">We can install and train your teachers</h3>
+        <p class="section-desc">
+          If you want our technical team to help set up ResultDesk on your school computers, import your student lists, or configure custom grading rules, we are happy to assist remotely or on-site.
+        </p>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:12px;">
+        <a href="contact.html?interest=resultdesk" class="btn btn-primary">Request School Setup Help →</a>
+        <a href="https://wa.me/2349126300594" target="_blank" class="btn btn-secondary">WhatsApp Tech Support (+234 912 630 0594)</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <span class="brand-title">DIVINE LEADS MEDIA</span>
+        <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; margin-top: 10px;">
+          Transforming Nigeria education with tech and AI. Research, software development, equipment supplies, and practical learner skills.
+        </p>
+      </div>
+      <div class="footer-col">
+        <h5>Solutions</h5>
+        <ul>
+          <li><a href="downloads.html">DLM ResultDesk Software</a></li>
+          <li><a href="index.html#equipment">Equipment Supplies &amp; Labs</a></li>
+          <li><a href="downloads.html#download-securevote">DLM SecureVote</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Quick Links</h5>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="staff.html">Our Staff</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="articles.html">Articles &amp; Guides</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Contact &amp; Support</h5>
+        <ul style="font-size:0.86rem;">
+          <li><span style="color:var(--text-dim); display:block; font-size:0.75rem;">PRIMARY EMAIL</span><a href="mailto:divineleadsmedia@gmail.com" style="color:var(--dlm-blue-soft);">divineleadsmedia@gmail.com</a></li>
+          <li><span style="color:var(--text-dim); display:block; font-size:0.75rem; margin-top:4px;">OFFICIAL / SECONDARY</span><a href="mailto:admin@divineleadsmedia.com">admin@divineleadsmedia.com</a></li>
+          <li><a href="https://wa.me/2349126300594" target="_blank" style="color:var(--accent-green);">WhatsApp: +234 912 630 0594</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <div>© 2026 Divine Leads Media. All Rights Reserved. Lagos, Nigeria.</div>
+      <div>Transforming Nigeria Education with Tech &amp; AI</div>
+    </div>
+  </footer>
+
+  <script src="assets/js/db.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      let activeFilter = 'all';
+
+      function renderDownloads() {
+        const container = document.getElementById('releasesContainer');
+        if (!container || !window.DLM_DB) return;
+
+        let downloads = window.DLM_DB.getDownloads();
+        if (activeFilter !== 'all') {
+          downloads = downloads.filter(d => d.tag.toLowerCase().includes(activeFilter.toLowerCase()));
+        }
+
+        if (downloads.length === 0) {
+          container.innerHTML = `
+            <div style="text-align:center; padding:50px 20px; background:var(--dlm-navy-surface); border-radius:var(--radius-md); border:1px solid var(--border-subtle);">
+              <p style="color:var(--text-muted);">No software releases found for this category.</p>
+            </div>
+          `;
+          return;
+        }
+
+        container.innerHTML = downloads.map(item => `
+          <div class="release-item">
+            <div>
+              <div style="display:flex; gap:8px; margin-bottom:10px; flex-wrap:wrap;">
+                <span class="version-badge font-mono">${item.version}</span>
+                <span class="badge" style="font-size:0.72rem;">${item.platform}</span>
+                <span class="badge" style="font-size:0.72rem; color:var(--accent-green); border-color:rgba(16,185,129,0.3);">${item.tag}</span>
+              </div>
+
+              <h3 style="font-family:var(--font-display); font-size:1.4rem; color:#fff; margin-bottom:8px;">${item.name}</h3>
+              <p style="color:var(--text-muted); font-size:0.92rem; margin-bottom:14px; max-width:760px;">${item.description}</p>
+
+              ${item.features && item.features.length > 0 ? `
+                <ul class="feature-check-list" style="margin:0 0 16px; font-size:0.88rem;">
+                  ${item.features.map(f => `<li>${f}</li>`).join('')}
+                </ul>
+              ` : ''}
+
+              <div style="display:flex; gap:18px; font-family:var(--font-mono); font-size:0.75rem; color:var(--dlm-slate-light); flex-wrap:wrap;">
+                <span>File Size: <strong style="color:#fff;">${item.size}</strong></span>
+                <span>Date: <strong style="color:#fff;">${item.date}</strong></span>
+                <span class="font-mono text-slate">${item.checksum || 'sha256: verified'}</span>
+              </div>
+            </div>
+
+            <div style="display:flex; flex-direction:column; gap:10px; align-items:flex-end;">
+              <button class="btn btn-primary" onclick="triggerDownload('${item.name}')">
+                Download Now ↓
+              </button>
+              <a href="contact.html?interest=${encodeURIComponent(item.name)}" class="btn btn-secondary btn-sm">
+                Request Setup Help
+              </a>
+            </div>
+          </div>
+        `).join('');
+      }
+
+      window.triggerDownload = function(name) {
+        window.showToast(`Starting download for ${name}...`, 'success');
+      };
+
+      document.querySelectorAll('#downloadCategoryFilters button').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('#downloadCategoryFilters button').forEach(b => {
+            b.classList.remove('btn-primary');
+            b.classList.add('btn-secondary');
+          });
+          btn.classList.remove('btn-secondary');
+          btn.classList.add('btn-primary');
+          activeFilter = btn.getAttribute('data-filter');
+          renderDownloads();
+        });
+      });
+
+      renderDownloads();
+
+      window.addEventListener('dlm_db_downloads_changed', () => {
+        renderDownloads();
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>News &amp; Field Updates — Divine Leads Media</title>
+  <meta name="description" content="Stay updated on Divine Leads Media school software rollouts, computer lab equipment installations, and student digital skills workshops in Nigeria.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M26,48 V20 H48 A28,28 0 0 1 74,36' fill='none' stroke='%230D1B2A' stroke-width='11' stroke-linecap='round'/%3E%3Cpath d='M26,52 V80 H48 A28,28 0 0 0 74,64' fill='none' stroke='%230D1B2A' stroke-width='11' stroke-linecap='round'/%3E%3Ccircle cx='43' cy='50' r='14' fill='%232563EB'/%3E%3Crect x='76' y='44' width='11' height='11' rx='3' fill='%232563EB'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container-wide nav-container">
+      <a href="index.html" class="brand-logo">
+        <svg class="brand-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <path d="M26,48 V20 H48 A28,28 0 0 1 74,36" fill="none" stroke="#FFFFFF" stroke-width="11" stroke-linecap="round"/>
+          <path d="M26,52 V80 H48 A28,28 0 0 0 74,64" fill="none" stroke="#FFFFFF" stroke-width="11" stroke-linecap="round"/>
+          <circle cx="43" cy="50" r="14" fill="#2563EB"/>
+          <rect x="76" y="44" width="11" height="11" rx="3" fill="#2563EB"/>
+        </svg>
+        <div class="brand-text">
+          <span class="brand-title">DIVINE LEADS</span>
+          <span class="brand-subtitle">M E D I A</span>
+        </div>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="downloads.html">Downloads</a></li>
+        <li><a href="staff.html">Our Staff</a></li>
+        <li><a href="news.html" class="active">News</a></li>
+        <li><a href="articles.html">Articles</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="downloads.html" class="btn btn-primary btn-sm">Get ResultDesk</a>
+        <button class="mobile-toggle" aria-label="Open Navigation">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-nav-drawer">
+    <button class="close-drawer" style="align-self: flex-end; background:none; border:none; color:#fff; font-size:2rem; cursor:pointer;" aria-label="Close">✕</button>
+    <ul class="mobile-links">
+      <li><a href="index.html" class="close-drawer">Home</a></li>
+      <li><a href="about.html" class="close-drawer">About Us</a></li>
+      <li><a href="downloads.html" class="close-drawer">Downloads &amp; Releases</a></li>
+      <li><a href="staff.html" class="close-drawer">Our Staff</a></li>
+      <li><a href="news.html" class="close-drawer active">News &amp; Events</a></li>
+      <li><a href="articles.html" class="close-drawer">Articles &amp; Guides</a></li>
+      <li><a href="contact.html" class="close-drawer">Contact Us</a></li>
+    </ul>
+  </div>
+
+  <!-- Hero -->
+  <section class="section" style="padding-top: 150px; padding-bottom: 40px;">
+    <div class="container">
+      <div class="badge">FIELD DISPATCHES &amp; ANNOUNCEMENTS</div>
+      <h1 class="hero-headline" style="font-size: clamp(2.4rem, 5vw, 4.2rem); margin-top: 12px;">
+        News &amp; <span class="highlight">School Deployment Dispatches</span>.
+      </h1>
+      <p class="hero-subhead" style="max-width: 780px;">
+        Follow our latest field deployments, school computer lab setups, research findings, and student workshops across Nigeria.
+      </p>
+
+      <!-- Category Filter Tabs & Search -->
+      <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; margin-top:24px;">
+        <div style="display:flex; gap:8px; flex-wrap:wrap;" id="newsCategoryFilters">
+          <button class="btn btn-primary btn-sm" data-filter="all">All News</button>
+          <button class="btn btn-secondary btn-sm" data-filter="Software Deployment">Software Deployment</button>
+          <button class="btn btn-secondary btn-sm" data-filter="Equipment Supply">Equipment Supply</button>
+          <button class="btn btn-secondary btn-sm" data-filter="Learner Skills">Student Skills</button>
+        </div>
+        <div style="min-width: 240px;">
+          <input type="text" id="newsSearchInput" class="form-control" placeholder="Search news..." style="padding: 8px 14px; font-size: 0.88rem;">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- News Grid -->
+  <section class="section" style="padding-top: 10px;">
+    <div class="container">
+      <div class="cards-grid" id="newsGridContainer">
+        <!-- Injected dynamically from db.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal for Full Story -->
+  <div class="modal-overlay" id="newsModal">
+    <div class="modal-container" style="max-width: 720px;">
+      <button class="modal-close-btn" aria-label="Close">✕</button>
+      <div class="card-meta-row" style="margin-bottom: 12px;">
+        <span class="font-mono text-blue" id="modalNewsCategory">Category</span>
+        <span id="modalNewsDate">Date</span>
+      </div>
+      <h2 class="section-title" id="modalNewsTitle" style="font-size: 1.8rem; margin-bottom: 14px; color:#fff;">News Title</h2>
+      <img id="modalNewsImage" src="" alt="" style="width:100%; height:260px; object-fit:cover; border-radius:var(--radius-sm); margin-bottom:20px; display:none;">
+      <div id="modalNewsBody" style="font-size: 0.98rem; line-height: 1.75; color: var(--text-primary); white-space: pre-line;"></div>
+      <div style="margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--border-subtle); display:flex; justify-content:space-between; align-items:center;">
+        <span style="color:var(--text-dim); font-size:0.82rem;" id="modalNewsAuthor"></span>
+        <button class="btn btn-secondary btn-sm" onclick="closeAllModals()">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <span class="brand-title">DIVINE LEADS MEDIA</span>
+        <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; margin-top: 10px;">
+          Transforming Nigeria education with tech and AI. Research, software development, equipment supplies, and practical learner skills.
+        </p>
+      </div>
+      <div class="footer-col">
+        <h5>Solutions</h5>
+        <ul>
+          <li><a href="downloads.html">DLM ResultDesk</a></li>
+          <li><a href="index.html#equipment">Equipment Supplies</a></li>
+          <li><a href="downloads.html#download-securevote">DLM SecureVote</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Quick Links</h5>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="staff.html">Our Staff</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="articles.html">Articles &amp; Guides</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Contact &amp; Support</h5>
+        <ul style="font-size:0.86rem;">
+          <li><span style="color:var(--text-dim); display:block; font-size:0.75rem;">PRIMARY EMAIL</span><a href="mailto:divineleadsmedia@gmail.com" style="color:var(--dlm-blue-soft);">divineleadsmedia@gmail.com</a></li>
+          <li><span style="color:var(--text-dim); display:block; font-size:0.75rem; margin-top:4px;">OFFICIAL / SECONDARY</span><a href="mailto:admin@divineleadsmedia.com">admin@divineleadsmedia.com</a></li>
+          <li><a href="https://wa.me/2349126300594" target="_blank" style="color:var(--accent-green);">WhatsApp: +234 912 630 0594</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <div>© 2026 Divine Leads Media. All Rights Reserved. Lagos, Nigeria.</div>
+      <div>Transforming Nigeria Education with Tech &amp; AI</div>
+    </div>
+  </footer>
+
+  <script src="assets/js/db.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      let activeFilter = 'all';
+      let searchQuery = '';
+
+      function renderNews() {
+        const container = document.getElementById('newsGridContainer');
+        if (!container || !window.DLM_DB) return;
+
+        let newsList = window.DLM_DB.getNews();
+
+        // Only show published news on public site
+        newsList = newsList.filter(n => (n.status || 'published') === 'published');
+
+        if (activeFilter !== 'all') {
+          newsList = newsList.filter(n => n.category.toLowerCase().includes(activeFilter.toLowerCase()));
+        }
+
+        if (searchQuery.trim() !== '') {
+          newsList = newsList.filter(n => 
+            n.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
+            n.summary.toLowerCase().includes(searchQuery.toLowerCase()) ||
+            (n.tags && n.tags.some(t => t.toLowerCase().includes(searchQuery.toLowerCase())))
+          );
+        }
+
+        if (newsList.length === 0) {
+          container.innerHTML = `
+            <div style="grid-column: 1 / -1; text-align:center; padding:50px 20px; background:var(--dlm-navy-surface); border-radius:var(--radius-md); border:1px solid var(--border-subtle);">
+              <p style="color:var(--text-muted);">No news items found matching this filter.</p>
+            </div>
+          `;
+          return;
+        }
+
+        container.innerHTML = newsList.map(item => {
+          const tags = Array.isArray(item.tags) && item.tags.length > 0 ? item.tags : [item.category];
+          const photo = item.image || 'https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=800&q=80';
+
+          return `
+            <div class="content-card" style="display:flex; flex-direction:column; justify-content:space-between;">
+              <div>
+                <img src="${photo}" alt="${item.title}" class="card-cover" onerror="this.src='https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=800&q=80'">
+                <div class="card-body" style="padding-bottom:12px;">
+                  <div class="card-meta-row" style="margin-bottom:8px;">
+                    <span class="font-mono text-blue" style="font-weight:600;">${item.category}</span>
+                    <span>${item.date}</span>
+                  </div>
+
+                  <!-- Tag Pills Display -->
+                  <div class="tag-pills-wrap" style="margin-bottom:10px;">
+                    ${tags.slice(0, 3).map(t => `<span class="tag-chip-sm">#${t}</span>`).join('')}
+                  </div>
+
+                  <h3 class="card-title">${item.title}</h3>
+                  <p class="card-summary">${item.summary}</p>
+                </div>
+              </div>
+              <div class="card-footer" style="padding: 0 24px 24px;">
+                <span style="color:var(--text-dim); font-size:0.8rem;">${item.readTime || '3 min read'}</span>
+                <button class="card-link" style="background:none; border:none; cursor:pointer;" onclick="viewNewsDetail('${item.id}')">
+                  Read Full Update →
+                </button>
+              </div>
+            </div>
+          `;
+        }).join('');
+      }
+
+      window.viewNewsDetail = function(id) {
+        const item = window.DLM_DB.getNewsById(id);
+        if (!item) return;
+
+        document.getElementById('modalNewsCategory').textContent = item.category;
+        document.getElementById('modalNewsDate').textContent = item.date;
+        document.getElementById('modalNewsTitle').textContent = item.title;
+        document.getElementById('modalNewsBody').textContent = item.content || item.summary;
+        document.getElementById('modalNewsAuthor').textContent = 'Source: ' + (item.author || 'Divine Leads Media Team');
+
+        const imgEl = document.getElementById('modalNewsImage');
+        if (item.image) {
+          imgEl.src = item.image;
+          imgEl.style.display = 'block';
+        } else {
+          imgEl.style.display = 'none';
+        }
+
+        openModal('newsModal');
+      };
+
+      document.querySelectorAll('#newsCategoryFilters button').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('#newsCategoryFilters button').forEach(b => {
+            b.classList.remove('btn-primary');
+            b.classList.add('btn-secondary');
+          });
+          btn.classList.remove('btn-secondary');
+          btn.classList.add('btn-primary');
+          activeFilter = btn.getAttribute('data-filter');
+          renderNews();
+        });
+      });
+
+      const searchInput = document.getElementById('newsSearchInput');
+      if (searchInput) {
+        searchInput.addEventListener('input', (e) => {
+          searchQuery = e.target.value;
+          renderNews();
+        });
+      }
+
+      renderNews();
+
+      window.addEventListener('dlm_db_news_changed', () => {
+        renderNews();
+      });
+    });
+  </script>
+</body>
+</html>

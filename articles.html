@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Articles &amp; Practical Guides — Divine Leads Media</title>
+  <meta name="description" content="Straightforward articles and guides on using AI, software, and computer equipment in Nigerian schools.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M26,48 V20 H48 A28,28 0 0 1 74,36' fill='none' stroke='%230D1B2A' stroke-width='11' stroke-linecap='round'/%3E%3Cpath d='M26,52 V80 H48 A28,28 0 0 0 74,64' fill='none' stroke='%230D1B2A' stroke-width='11' stroke-linecap='round'/%3E%3Ccircle cx='43' cy='50' r='14' fill='%232563EB'/%3E%3Crect x='76' y='44' width='11' height='11' rx='3' fill='%232563EB'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container-wide nav-container">
+      <a href="index.html" class="brand-logo">
+        <svg class="brand-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <path d="M26,48 V20 H48 A28,28 0 0 1 74,36" fill="none" stroke="#FFFFFF" stroke-width="11" stroke-linecap="round"/>
+          <path d="M26,52 V80 H48 A28,28 0 0 0 74,64" fill="none" stroke="#FFFFFF" stroke-width="11" stroke-linecap="round"/>
+          <circle cx="43" cy="50" r="14" fill="#2563EB"/>
+          <rect x="76" y="44" width="11" height="11" rx="3" fill="#2563EB"/>
+        </svg>
+        <div class="brand-text">
+          <span class="brand-title">DIVINE LEADS</span>
+          <span class="brand-subtitle">M E D I A</span>
+        </div>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="downloads.html">Downloads</a></li>
+        <li><a href="staff.html">Our Staff</a></li>
+        <li><a href="news.html">News</a></li>
+        <li><a href="articles.html" class="active">Articles</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="downloads.html" class="btn btn-primary btn-sm">Get ResultDesk</a>
+        <button class="mobile-toggle" aria-label="Open Navigation">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-nav-drawer">
+    <button class="close-drawer" style="align-self: flex-end; background:none; border:none; color:#fff; font-size:2rem; cursor:pointer;" aria-label="Close">✕</button>
+    <ul class="mobile-links">
+      <li><a href="index.html" class="close-drawer">Home</a></li>
+      <li><a href="about.html" class="close-drawer">About Us</a></li>
+      <li><a href="downloads.html" class="close-drawer">Downloads &amp; Releases</a></li>
+      <li><a href="staff.html" class="close-drawer">Our Staff</a></li>
+      <li><a href="news.html" class="close-drawer">News &amp; Events</a></li>
+      <li><a href="articles.html" class="close-drawer active">Articles &amp; Guides</a></li>
+      <li><a href="contact.html" class="close-drawer">Contact Us</a></li>
+    </ul>
+  </div>
+
+  <!-- Hero -->
+  <section class="section" style="padding-top: 150px; padding-bottom: 40px;">
+    <div class="container">
+      <div class="badge">RESEARCH &amp; PRACTICAL GUIDES</div>
+      <h1 class="hero-headline" style="font-size: clamp(2.4rem, 5vw, 4.2rem); margin-top: 12px;">
+        Practical Guides &amp; <span class="highlight">Research Insights</span>.
+      </h1>
+      <p class="hero-subhead" style="max-width: 780px;">
+        Simple, actionable guides for Nigerian school proprietors, principals, exam officers, and teachers. Discover practical ways to automate student grading, set up computer labs, and help students learn with AI.
+      </p>
+
+      <!-- Topic Filter Tabs -->
+      <div style="display:flex; gap:10px; margin-top: 24px; flex-wrap:wrap;" id="articlesTagFilters">
+        <button class="btn btn-primary btn-sm" data-tag="all">All Guides</button>
+        <button class="btn btn-secondary btn-sm" data-tag="Software & AI">Software &amp; AI</button>
+        <button class="btn btn-secondary btn-sm" data-tag="Equipment Supply">Equipment Supply</button>
+        <button class="btn btn-secondary btn-sm" data-tag="AI Skills">AI &amp; Student Skills</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Articles Grid -->
+  <section class="section" style="padding-top: 10px;">
+    <div class="container">
+      <div class="cards-grid" id="articlesGridContainer">
+        <!-- Injected dynamically from db.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Reading Modal -->
+  <div class="modal-overlay" id="articleReaderModal">
+    <div class="modal-container" style="max-width: 780px; padding: 36px;">
+      <button class="modal-close-btn" aria-label="Close">✕</button>
+      
+      <div class="card-meta-row" style="margin-bottom: 12px; flex-wrap:wrap; gap:8px;">
+        <span class="font-mono text-blue" id="readerTag">Tag</span>
+        <div id="readerTagsContainer" class="tag-pills-wrap" style="display:inline-flex;"></div>
+        <span id="readerDate" style="margin-left:auto;">Date</span>
+      </div>
+
+      <h1 class="section-title" id="readerTitle" style="font-size: clamp(1.6rem, 3vw, 2.2rem); line-height: 1.25; color:#fff; margin-bottom: 16px;">
+        Article Title
+      </h1>
+
+      <div style="display:flex; align-items:center; gap:10px; margin-bottom: 24px;">
+        <div style="width:36px; height:36px; border-radius:50%; background:var(--dlm-blue); display:grid; place-items:center; font-weight:700; color:#fff;" id="readerAuthorAvatar">
+          EJ
+        </div>
+        <div>
+          <div style="font-weight:600; color:#fff; font-size:0.9rem;" id="readerAuthorName">Author Name</div>
+          <div style="color:var(--text-dim); font-size:0.75rem;" id="readerAuthorRole">Author Role</div>
+        </div>
+      </div>
+
+      <img id="readerCover" src="" alt="" style="width:100%; height:280px; object-fit:cover; border-radius:var(--radius-sm); margin-bottom:24px; border:1px solid var(--border-subtle);">
+
+      <div id="readerBody" style="font-size: 1rem; line-height: 1.8; color: var(--text-primary); white-space: pre-line;"></div>
+
+      <div style="margin-top: 36px; padding-top: 20px; border-top: 1px solid var(--border-subtle); display:flex; justify-content:space-between; align-items:center;">
+        <span style="font-family:var(--font-mono); font-size:0.78rem; color:var(--dlm-slate-light);">Divine Leads Media Guide</span>
+        <button class="btn btn-secondary btn-sm" onclick="closeAllModals()">Close Guide</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <span class="brand-title">DIVINE LEADS MEDIA</span>
+        <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; margin-top: 10px;">
+          Transforming Nigeria education with tech and AI. Research, software development, equipment supplies, and practical learner skills.
+        </p>
+      </div>
+      <div class="footer-col">
+        <h5>Solutions</h5>
+        <ul>
+          <li><a href="downloads.html">DLM ResultDesk Software</a></li>
+          <li><a href="index.html#equipment">Equipment Supplies &amp; Labs</a></li>
+          <li><a href="downloads.html#download-securevote">DLM SecureVote</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Quick Links</h5>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="staff.html">Our Staff</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="articles.html">Articles &amp; Guides</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Contact &amp; Support</h5>
+        <ul style="font-size:0.86rem;">
+          <li><span style="color:var(--text-dim); display:block; font-size:0.75rem;">PRIMARY EMAIL</span><a href="mailto:divineleadsmedia@gmail.com" style="color:var(--dlm-blue-soft);">divineleadsmedia@gmail.com</a></li>
+          <li><span style="color:var(--text-dim); display:block; font-size:0.75rem; margin-top:4px;">OFFICIAL / SECONDARY</span><a href="mailto:admin@divineleadsmedia.com">admin@divineleadsmedia.com</a></li>
+          <li><a href="https://wa.me/2349126300594" target="_blank" style="color:var(--accent-green);">WhatsApp: +234 912 630 0594</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <div>© 2026 Divine Leads Media. All Rights Reserved. Lagos, Nigeria.</div>
+      <div>Transforming Nigeria Education with Tech &amp; AI</div>
+    </div>
+  </footer>
+
+  <script src="assets/js/db.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      let activeTopic = 'all';
+      let activeTagFilter = null;
+
+      function renderArticles() {
+        const container = document.getElementById('articlesGridContainer');
+        if (!container || !window.DLM_DB) return;
+
+        let articles = window.DLM_DB.getArticles();
+
+        // Only show published articles on public page
+        articles = articles.filter(a => (a.status || 'published') === 'published');
+
+        if (activeTopic !== 'all') {
+          articles = articles.filter(a => (a.tag || '').toLowerCase() === activeTopic.toLowerCase());
+        }
+
+        if (activeTagFilter) {
+          articles = articles.filter(a => 
+            (a.tags && a.tags.some(t => t.toLowerCase() === activeTagFilter.toLowerCase())) ||
+            (a.tag && a.tag.toLowerCase() === activeTagFilter.toLowerCase())
+          );
+        }
+
+        if (articles.length === 0) {
+          container.innerHTML = `
+            <div style="grid-column: 1 / -1; text-align:center; padding:50px 20px; background:var(--dlm-navy-surface); border-radius:var(--radius-md); border:1px solid var(--border-subtle);">
+              <p style="color:var(--text-muted); margin-bottom:12px;">No articles found matching this filter.</p>
+              ${activeTagFilter ? `<button class="btn btn-secondary btn-sm" onclick="clearTagFilter()">Show All Topics</button>` : ''}
+            </div>
+          `;
+          return;
+        }
+
+        container.innerHTML = articles.map(art => {
+          const tags = Array.isArray(art.tags) && art.tags.length > 0 ? art.tags : [art.tag || 'Guide'];
+          const coverImg = art.cover || 'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=800&q=80';
+          const altText = art.coverAlt || art.title;
+
+          return `
+            <div class="content-card" style="display:flex; flex-direction:column; justify-content:space-between;">
+              <div>
+                <img src="${coverImg}" alt="${altText}" class="card-cover" onerror="this.src='https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=800&q=80'">
+                <div class="card-body" style="padding-bottom:12px;">
+                  <div class="card-meta-row" style="margin-bottom:8px;">
+                    <span class="font-mono text-blue" style="font-weight:600;">${art.tag}</span>
+                    <span>${art.readTime || '4 min read'}</span>
+                  </div>
+
+                  <!-- Tag Pills Configuration Display -->
+                  <div class="tag-pills-wrap" style="margin-bottom:10px;">
+                    ${tags.slice(0, 3).map(t => `
+                      <span class="tag-chip-sm" style="cursor:pointer;" onclick="event.stopPropagation(); filterByTag('${t}')">#${t}</span>
+                    `).join('')}
+                    ${tags.length > 3 ? `<span class="tag-chip-sm" title="${tags.slice(3).join(', ')}">+${tags.length - 3}</span>` : ''}
+                  </div>
+
+                  <h3 class="card-title">${art.title}</h3>
+                  <p class="card-summary">${art.summary}</p>
+                </div>
+              </div>
+              <div class="card-footer" style="padding: 0 24px 24px;">
+                <span style="color:var(--text-dim); font-size:0.8rem;">By ${art.author}</span>
+                <button class="card-link" style="background:none; border:none; cursor:pointer;" onclick="openArticleReader('${art.id}')">
+                  Read Guide →
+                </button>
+              </div>
+            </div>
+          `;
+        }).join('');
+      }
+
+      window.filterByTag = function(tagName) {
+        activeTagFilter = tagName;
+        window.showToast(`Filtering by tag: #${tagName}`, 'success');
+        renderArticles();
+      };
+
+      window.clearTagFilter = function() {
+        activeTagFilter = null;
+        activeTopic = 'all';
+        document.querySelectorAll('#articlesTagFilters button').forEach(b => {
+          b.classList.remove('btn-primary');
+          b.classList.add('btn-secondary');
+        });
+        document.querySelector('#articlesTagFilters button[data-tag="all"]')?.classList.add('btn-primary');
+        renderArticles();
+      };
+
+      window.openArticleReader = function(id) {
+        const art = window.DLM_DB.getArticleById(id);
+        if (!art) return;
+
+        document.getElementById('readerTag').textContent = art.tag;
+        document.getElementById('readerDate').textContent = `${art.date} · ${art.readTime || '4 min read'}`;
+        document.getElementById('readerTitle').textContent = art.title;
+        document.getElementById('readerAuthorName').textContent = art.author;
+        document.getElementById('readerAuthorRole').textContent = art.role || 'Divine Leads Media';
+        document.getElementById('readerAuthorAvatar').textContent = (art.author || 'DL').split(' ').map(n=>n[0]).join('').substring(0,2);
+        
+        const coverImg = document.getElementById('readerCover');
+        coverImg.src = art.cover || 'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=1000&q=80';
+        coverImg.alt = art.coverAlt || art.title;
+
+        // Render tag pills in reader modal
+        const tagsContainer = document.getElementById('readerTagsContainer');
+        const tags = Array.isArray(art.tags) && art.tags.length > 0 ? art.tags : [art.tag];
+        tagsContainer.innerHTML = tags.map(t => `<span class="tag-chip-sm">#${t}</span>`).join('');
+
+        // Formatted content
+        const bodyEl = document.getElementById('readerBody');
+        bodyEl.innerHTML = formatGuideBody(art.content || art.summary);
+
+        openModal('articleReaderModal');
+      };
+
+      function formatGuideBody(text) {
+        if (!text) return '';
+        return text
+          .replace(/^### (.*$)/gim, '<h3 style="color:#fff; font-family:var(--font-display); margin:24px 0 10px; font-size:1.2rem;">$1</h3>')
+          .replace(/^## (.*$)/gim, '<h2 style="color:#fff; font-family:var(--font-display); margin:28px 0 12px; font-size:1.4rem;">$1</h2>')
+          .replace(/^# (.*$)/gim, '<h1 style="color:#fff; font-family:var(--font-display); margin:32px 0 14px; font-size:1.6rem;">$1</h1>')
+          .replace(/^\> (.*$)/gim, '<blockquote style="border-left:3px solid var(--dlm-blue); padding-left:16px; margin:16px 0; color:var(--text-muted); font-style:italic;">$1</blockquote>')
+          .replace(/\*\*(.*)\*\*/gim, '<strong style="color:#fff;">$1</strong>')
+          .replace(/\*(.*)\*/gim, '<em>$1</em>')
+          .replace(/`([^`]+)`/gim, '<code style="background:#080D16; padding:2px 6px; border-radius:4px; font-family:var(--font-mono); font-size:0.85em; color:var(--dlm-blue-soft);">$1</code>')
+          .replace(/\n\n/g, '<p style="margin-bottom:16px;"></p>')
+          .replace(/\n/g, '<br>');
+      }
+
+      document.querySelectorAll('#articlesTagFilters button').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('#articlesTagFilters button').forEach(b => {
+            b.classList.remove('btn-primary');
+            b.classList.add('btn-secondary');
+          });
+          btn.classList.remove('btn-secondary');
+          btn.classList.add('btn-primary');
+          activeTopic = btn.getAttribute('data-tag');
+          activeTagFilter = null; // reset specific sub-tag filter
+          renderArticles();
+        });
+      });
+
+      renderArticles();
+
+      const params = new URLSearchParams(window.location.search);
+      const articleId = params.get('id');
+      if (articleId) {
+        setTimeout(() => openArticleReader(articleId), 200);
+      }
+
+      window.addEventListener('dlm_db_articles_changed', () => {
+        renderArticles();
+      });
+    });
+  </script>
+</body>
+</html>

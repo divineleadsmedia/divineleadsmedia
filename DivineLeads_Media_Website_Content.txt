@@ -1,0 +1,438 @@
+DIVINE LEADS MEDIA (DLM)
+Complete Website Content & Copywriting Document
+For Review, Editing, and Re-upload
+
+Company Overview & Core Brand Positioning
+Official Brand Name: Divine Leads Media (DLM)
+Core Brand Headline: "Transforming Nigeria Education with Tech and AI"
+The 4 Cohesive Pillars: 1. Research  |  2. Software Development  |  3. Education Technology Equipment Supplies  |  4. Digital & AI Skills for Nigerian Learners
+Primary Contact Phone / WhatsApp: +234 912 630 0594
+Official Email: admin@divineleadsmedia.com  |  contact@divineleadsmedia.com
+Office Location: Lagos, Nigeria (Serving Primary & Secondary Schools Nationwide)
+Brand Colors: Dark Navy (#0D1B2A) | DLM Blue (#2563EB) | Slate Grey (#6B7280) | White (#FFFFFF)
+
+1. HOMEPAGE CONTENT
+Website File: index.html
+Navigation Menu
+• Logo: Divine Leads Media (with official D monogram)
+• Menu Links: Home | About Us | Downloads | Our Staff | News | Articles | Contact Us
+• Header Action Buttons: "Staff Login" (Link to CMS) | "Get ResultDesk" (Link to Downloads)
+Hero Section
+Badge / Pre-headline
+EDTECH & EDUCATIONAL AI SOLUTIONS — NIGERIA
+Main Headline
+Transforming Nigeria Education with Tech and AI
+Supporting Description
+We build practical offline school software, supply durable computer lab equipment, conduct classroom research, and train Nigerian learners in essential digital and AI skills for the modern world.
+Call to Action Buttons
+• Primary Button: "Download DLM ResultDesk" (Goes to downloads.html)
+• Secondary Button: "Explore Our 4 Pillars" (Scrolls down to the pillars)
+Live Statistics Bar (Marquee)
+Stat 1: 15+ Schools Digitized in Nigeria
+Stat 2: 500+ Nigerian Learners Trained in Tech & AI Skills
+Stat 3: 12,000+ Broadsheets & Report Cards Computed
+Stat 4: 100% Offline Software — Zero Internet Required
+Section 1: The 4 Cohesive Pillars
+Headline: A Complete, Cohesive Approach to Transforming School Education
+Subtitle: We do not treat technology in isolation. We unite research, software, equipment, and learner skills into one unified solution.
+Pillar 1: Educational Research
+Title: Classroom & Curriculum Research
+Summary: We study the real daily challenges in Nigerian primary and secondary schools. Our field research guides how we build software and what equipment lasts in local conditions.
+Key Points: • Field studies with classroom teachers
+• Identifying reporting and grading bottlenecks
+• Designing solutions that work with low power and zero internet
+Pillar 2: Developing Software
+Title: Practical School Software
+Summary: We engineer reliable, easy-to-use desktop tools like DLM ResultDesk. Our software automates exam score calculations, builds broadsheets, and prints report cards.
+Key Points: • Automatic broadsheet generation
+• Error-free student report cards in minutes
+• Works completely offline on any standard PC
+Pillar 3: Supplies of Education Technology Equipments
+Title: Supplies of Tech Equipments
+Summary: We supply and configure high-grade, durable computer systems, networking hardware, and backup power equipment so schools can run reliable computer labs.
+Key Points: • Desktop computers and monitors for CBT exam labs
+• LAN network cabling and wireless routers
+• Solar and inverter backup power systems for uninterrupted learning
+Pillar 4: Digital & AI Skills for Nigerian Learners
+Title: Digital & AI Skills for Learners
+Summary: We teach primary and secondary school learners practical computer literacy, typing, internet research, and how to use modern AI tools to understand academic subjects.
+Key Points: • Keyboard typing and computer operating basics
+• Safe internet search and research skills
+• Prompting AI assistants to understand math, science, and English
+Section 2: Flagship Software Spotlight — DLM ResultDesk
+Section Tag & Headline
+FLAGSHIP SCHOOL SOFTWARE
+DLM ResultDesk — End the Stress of Manual School Broadsheets
+Description
+DLM ResultDesk is built specifically for Nigerian primary and secondary schools. Teachers simply enter test and exam scores once, and ResultDesk instantly computes total marks, averages, subject ranks, class positions, and prints clean student report cards with your school logo.
+Feature Highlights
+Automatic Broadsheets: Enter continuous assessment (CA) and exam marks once, and the software calculates totals, subject ranks, and class averages automatically.
+Print Clean Report Cards: Generate beautiful, error-free PDF report sheets with school badges, principal remarks, and performance charts in minutes.
+Works Completely Offline: Runs smoothly on any standard Windows laptop or desktop computer with zero internet connection needed.
+Follows Nigerian Standards: Pre-configured for Nursery, Primary, Junior, and Senior Secondary grading rules (WAEC, NECO, and BECE scales).
+Action Buttons
+• Button 1: "Download ResultDesk v1.4.2" (downloads.html)
+• Button 2: "Request School Walkthrough" (contact.html?interest=resultdesk)
+Section 3: Supplies of Education Technology Equipments
+Headline & Subtitle
+Durable Computer Lab & CBT Equipment for Nigerian Schools
+We supply, deliver, install, and support proven educational technology hardware tested for Nigerian school environments.
+Equipment Categories
+1. Complete Desktop Computer Sets: Durable Core i5/i3 desktop computers, LED monitors, durable keyboards, and mice optimized for student CBT labs and school administration.
+2. CBT Network Setup & Cabling: High-speed local network switches, structured CAT6 cabling, and server routers configured for offline JAMB/WAEC CBT mock examination software.
+3. Solar & Inverter Backup Power: Reliable pure sine wave inverters, deep-cycle solar batteries, and solar panels to keep computer labs running during public power cuts.
+4. Interactive Projectors & Smart Screens: Large-format classroom screens and high-lumen projectors for interactive multimedia teaching and teacher presentations.
+Section 4: Upcoming Webinars & Conferences
+Headline & Subtitle
+Upcoming Webinars & Training Conferences
+Join our free online sessions and physical workshops designed for school owners, headteachers, and ICT coordinators.
+Event 1
+Title: Eliminating Report Sheet Errors: Automated Assessment for Nigerian Schools
+Type: Online Webinar | Zoom
+Date & Time: October 5, 2026 | 4:00 PM – 5:30 PM (WAT)
+Speakers: Eesuola Joshua Damilare & Dr. Grace Adeyemi
+Description: Learn how modern schools eliminate two weeks of stressful report sheet compilation using simple offline tools like DLM ResultDesk.
+Event 2
+Title: Equipping a Durable CBT Computer Lab on a Modest School Budget
+Type: Live Practical Workshop | Lagos
+Date & Time: October 24, 2026 | 10:00 AM – 2:00 PM (WAT)
+Speakers: Babatunde Ojo (Equipment Lead) & DLM Lab Tech Team
+Description: A step-by-step breakdown on choosing cost-effective desktop PCs, LAN cabling, and solar inverter systems for primary and secondary schools.
+Event 3
+Title: Teaching AI Literacy Safely to Nigerian Primary & Secondary Students
+Type: Virtual Panel & Demonstration
+Date & Time: November 12, 2026 | 5:00 PM – 6:30 PM (WAT)
+Speakers: Maryam Bello & Invited School Principals
+Description: How to introduce learners to artificial intelligence as a study assistant while maintaining academic integrity and personal safety.
+Section 5: Video Gallery
+Headline & Subtitle
+Video Demonstrations & Student Highlights
+Watch how DLM ResultDesk works, view highlights from our student training workshops, and see how we set up computer labs.
+Videos
+Video 1: DLM ResultDesk: Complete Software Walkthrough in 4 Minutes (Duration: 4:15 | Category: Product Walkthrough)
+Description: Watch how quickly a teacher can enter CA scores, let ResultDesk compute class rankings, and print final student report cards.
+Video 2: Practical Digital & AI Skills Training for Secondary School Students (Duration: 5:40 | Category: Student Training)
+Description: Highlights from our student workshop teaching typing, computer navigation, and using AI tools to understand school subjects.
+Video 3: School Computer Lab Equipment and CBT Setup by Divine Leads Media (Duration: 4:50 | Category: Equipment Supplies)
+Description: Tour of a newly equipped 50-seater secondary school computer lab with durable desktop PCs, LAN cabling, and solar inverter backup power.
+
+2. ABOUT US PAGE CONTENT
+Website File: about.html
+Header & Mission
+Headline
+About Divine Leads Media
+Subtitle
+We are dedicated to transforming education across Nigeria through practical technology, classroom research, equipment supplies, and learner skills.
+Our Story: Why Divine Leads Media Was Founded
+For years, Nigerian schools have faced the same persistent obstacles: teachers spending three to four weeks every term manually calculating student continuous assessment scores and broadsheets by hand; computer rooms with non-working systems or no backup power; and students graduating without knowing how to comfortably type on a keyboard or use modern technology.
+
+Divine Leads Media was founded by Eesuola Joshua Damilare with a clear conviction: technology should make running a school simpler, not more complicated. Instead of building expensive online portals that fail the moment internet or electricity drops, we build practical solutions that work in real Nigerian classrooms.
+
+Today, DLM operates as a cohesive unit uniting four critical parts: conducting field research to understand school needs, developing reliable offline school software like DLM ResultDesk, supplying schools with durable computer hardware and solar power, and equipping learners with digital literacy and AI study skills.
+The 4 Cohesive Pillars (Detailed)
+1. Classroom & Pedagogical Research
+Before we write a single line of software code or recommend equipment, our team visits schools and interviews headteachers, proprietors, and classroom teachers. We examine the exact bottlenecks: how long it takes to process exam scores, what causes errors on report cards, and how power outages disrupt ICT classes. Our research ensures our tools solve real Nigerian problems.
+2. Practical Software Development
+Our flagship software, DLM ResultDesk, was engineered to solve the most painful administrative bottleneck in Nigerian schools: terminal results computation. We build software that works 100% offline, requires no monthly internet subscriptions, runs on everyday Windows computers, and follows official Nigerian grading standards (WAEC, NECO, BECE).
+3. Supplies of Education Technology Equipments
+Software needs reliable hardware to run. Many schools have been sold fragile or unsuitable computers that fail within months. Divine Leads Media supplies rugged, tested desktop computers, commercial-grade network cabling for CBT exam centers, and solar/inverter power backup systems configured specifically for Nigerian climate and power realities.
+4. Digital & AI Skills for Nigerian Learners
+A well-equipped computer lab is useless without skilled students. We run structured, practical workshops for primary and secondary school pupils. We do not teach theoretical concepts; we teach hands-on typing, computer operating skills, productive internet research, and how to safely prompt AI tools to understand complex subjects in mathematics, basic science, and literature.
+Why We Built DLM ResultDesk
+At the end of every school term in Nigeria, teachers are exhausted. They sit for hours with calculators, tallying CA scores, writing out broadsheet rolls on cardboard papers, and copying grades onto individual report cards. A single addition mistake can skew a child's class position and cause disputes with parents.
+
+We built DLM ResultDesk to eliminate this burden. With ResultDesk, a teacher enters each student's score once. The software instantly computes total scores, calculates class positions, generates subject ranks, applies the correct grade letter and remarks, and produces clean, printable PDF report cards with your school logo. What used to take two weeks now takes fifteen minutes.
+Our Hardware & Equipment Standards
+Quality Assured: Every desktop PC, monitor, and network switch is bench-tested for at least 48 hours before delivery.
+Inverter & Solar Sizing: We calculate your exact school power load so your lab runs smoothly through NEPA power cuts.
+Onsite Setup & Teacher Training: We do not simply drop off boxes; our technicians install, cable, configure, and train your staff.
+
+3. DOWNLOADS & SOFTWARE RELEASES
+Website File: downloads.html
+Header
+Headline
+Software Releases & Downloads
+Subtitle
+Download official, verified offline school software developed by Divine Leads Media.
+Software Releases List
+Release 1: DLM ResultDesk Desktop (v1.4.2)
+Category: Official School Assessment Software
+Version: v1.4.2
+Platform: Windows 10 / 11 / 7 (32-bit & 64-bit)
+File Size: 48.5 MB (Complete Installer)
+Release Date: September 2026
+Checksum: SHA-256: 7f8a9e...verified
+Description: Full installer package for Windows laptops and desktop computers. Complete with offline database engine, broadsheet generator, report card PDF builder, and Nigerian grading templates.
+Key Features: • Automatic continuous assessment and exam mark calculations
+• Instant broadsheet export to Excel and PDF
+• Custom report card designer with school logo and principal stamp
+• Pre-configured WAEC, NECO, and BECE grading scales
+• Works 100% offline with password-protected school records
+Release 2: DLM ResultDesk Portable USB Edition (v1.4.2)
+Category: Portable Offline Edition
+Version: v1.4.2 Portable
+Platform: Windows (Runs directly from USB Flash Drive)
+File Size: 32.1 MB (ZIP Archive)
+Release Date: September 2026
+Checksum: SHA-256: 3c2d1e...verified
+Description: Run ResultDesk directly from any USB flash drive without installing it on the computer. Perfect for teachers who compile student marks at home on personal laptops and bring results to school.
+Key Features: • No installation required — plug and run immediately
+• Keeps all student records safely encrypted on your USB drive
+• Works on any Windows PC without administrative rights
+• Instant sync with the school master ResultDesk database
+Release 3: DLM ServiceFlow (v1.1.0)
+Category: Lab & Equipment Management
+Version: v1.1.0
+Platform: Windows / Web Browser
+File Size: 18.4 MB
+Release Date: August 2026
+Checksum: SHA-256: 9b1c7a...verified
+Description: School computer lab inventory and maintenance tracker. Keeps records of all desktop computers, monitor serial numbers, software licenses, maintenance schedules, and equipment warranties.
+Key Features: • Track status of every desktop PC in your school lab
+• Prevent missing equipment with serial number inventory
+• Schedule routine computer servicing and cleaning reminders
+• Print lab hardware audit reports for school proprietors
+Release 4: Broadsheet Excel Starter Kit (v2026)
+Category: Free School Template
+Version: v2026 Template
+Platform: Microsoft Excel / WPS Office
+File Size: 2.4 MB (XLSX Spreadsheet)
+Release Date: July 2026
+Checksum: SHA-256: 1a8f4c...verified
+Description: Free pre-formatted Excel broadsheet templates for schools preparing to transition from paper to software. Includes built-in formulas for total marks, class averages, and percentage ranks.
+Key Features: • Pre-configured formula columns for CA1 (20), CA2 (20), and Exam (60)
+• Automatic letter grading (A1, B2, C4, etc.)
+• Easily imports directly into DLM ResultDesk
+System Requirements & Installation Notes
+Operating System: Windows 7, 8, 10, or 11 (32-bit or 64-bit)
+Memory (RAM): 2 GB RAM minimum (4 GB recommended)
+Storage Space: 200 MB free hard drive space
+Printer: Any standard desktop inkjet or laser printer (for printing paper report cards and broadsheets)
+Internet Requirement: NONE. All software functions 100% offline.
+
+4. OUR STAFF & LEADERSHIP
+Website File: staff.html
+Header
+Headline
+The People Behind Divine Leads Media
+Subtitle
+A dedicated team of educators, software engineers, hardware technicians, and curriculum researchers passionate about Nigerian education.
+Staff Profiles
+1. Eesuola Joshua Damilare
+Role / Title: Founder & Lead Technologist
+Qualifications / Focus: B.Tech Computer Science | EdTech Systems Architect
+Biography: Joshua leads product engineering and strategy at Divine Leads Media. He is the architect behind DLM ResultDesk and directs the company's research into classroom efficiency, offline software design, and educational technology infrastructure in Nigeria.
+2. Dr. Grace Adeyemi
+Role / Title: Head of Educational Research & Curriculum
+Qualifications / Focus: Ph.D. Educational Evaluation | 15+ Years School Research
+Biography: Dr. Adeyemi leads our school field studies. She evaluates how teachers assess students, identifies grading bottlenecks, and ensures that all DLM software follows official Ministry of Education and WAEC/NECO grading standards.
+3. Babatunde Ojo
+Role / Title: Lead, Equipment Supplies & CBT Lab Engineering
+Qualifications / Focus: B.Eng Electrical & Computer Engineering
+Biography: Babatunde oversees all hardware procurement, CBT lab installations, and solar/inverter backup power setups. He ensures that schools receive durable desktop computers and properly cabled networks that do not fail during exams.
+4. Maryam Bello
+Role / Title: Lead Facilitator, Student Digital & AI Skills
+Qualifications / Focus: B.Sc Education & Computer Science
+Biography: Maryam coordinates our student training programs across primary and secondary schools. She specializes in teaching keyboard typing, computer literacy, and introducing students to safe, productive uses of AI study tools.
+5. Chidi Okonkwo
+Role / Title: Desktop Software Engineer — ResultDesk
+Qualifications / Focus: Software Engineering | Desktop Systems
+Biography: Chidi works on the core engine of DLM ResultDesk. He focuses on offline database performance, instant score calculations, and creating customizable report card print engines for schools.
+6. Blessing Williams
+Role / Title: School Success & Training Coordinator
+Qualifications / Focus: B.Ed Educational Management
+Biography: Blessing works directly with school owners, headteachers, and exam officers. She organizes software setup, trains teachers on how to enter scores, and provides ongoing customer support for partner schools.
+Our Principles & Work Culture
+1. Simplicity Over Complexity: We do not build complicated tools that confuse teachers. If a teacher cannot learn our software in 20 minutes, we redesign it.
+2. Offline Reality: We design for Nigeria's infrastructure: our software never freezes because the internet is down.
+3. Durable Hardware Only: We never supply cheap, fragile electronics. Every computer and inverter we supply must survive everyday school use.
+4. Empowering the Learner: We believe every Nigerian child, regardless of school fees, deserves the skills to type, use a computer, and understand AI.
+
+5. NEWS & SCHOOL DEPLOYMENTS
+Website File: news.html
+Header
+Headline
+News & School Deployment Dispatches
+Subtitle
+Follow our latest field deployments, school computer lab setups, research findings, and student workshops across Nigeria.
+News Articles (Full Copy)
+Article 1: Divine Leads Media Deploys DLM ResultDesk to 15 Secondary Schools in Lagos
+Category: Software Deployment
+Publication Date: September 12, 2026
+Author: DLM Media Team
+Read Time: 3 min read
+Summary: Schools in Lagos now use DLM ResultDesk to compute terminal student results and print report cards in minutes instead of weeks.
+Full Content:
+Over 15 secondary schools across Lagos State successfully transitioned from manual paper broadsheets to DLM ResultDesk this term. School principals reported that result compilation, which usually kept teachers at school until 7:00 PM for two full weeks, was completed in under two days with zero mathematical errors.
+
+"The difference was night and day," remarked Mrs. Folashade Adeleke, Principal of Grace Secondary School in Ikeja. "Our teachers entered their continuous assessment marks into ResultDesk, and the software immediately arranged the broadsheet, calculated student percentages, assigned class ranks, and printed all student report cards. Parents received clear, beautiful report cards on the very day of vacation."
+
+Our deployment team provided on-site teacher training at each school, ensuring that even staff members with minimal computer experience could comfortably type marks and generate student records.
+Article 2: Divine Leads Media Delivers 50-Seater CBT Computer Lab in Ogun State
+Category: Equipment Supplies
+Publication Date: August 28, 2026
+Author: Hardware Division
+Read Time: 4 min read
+Summary: A secondary school in Abeokuta, Ogun State, now operates a dedicated 50-seater CBT center supplied, networked, and powered by DLM.
+Full Content:
+Divine Leads Media has completed the supply, delivery, and installation of a brand-new 50-seater computer-based testing (CBT) center for a prominent secondary school in Abeokuta, Ogun State.
+
+The project included supplying 50 durable desktop computers, 50 19-inch LED monitors, structured CAT6 local area network (LAN) cabling, gigabit network switches, a master examination server, and a high-capacity solar inverter backup power system.
+
+"Before this setup, our students had to travel long distances to write mock JAMB and computer exams," explained the school proprietor. "Divine Leads Media delivered reliable computers, wired the entire room neatly, and installed a solar power backup so the computers do not switch off during public power failures. Our students can now practice CBT exams every week with total confidence."
+Article 3: Over 1,200 Students Complete Hands-On Digital & AI Skills Workshop
+Category: Learner Skills
+Publication Date: August 10, 2026
+Author: Training Team
+Read Time: 3 min read
+Summary: Our student skills initiative trained over 1,200 primary and secondary pupils on keyboard typing, computer basics, and using AI study tools.
+Full Content:
+Divine Leads Media concluded its August holiday training workshop, certifying over 1,200 primary and junior secondary school pupils in essential digital and artificial intelligence skills.
+
+The curriculum focused on practical, hands-on learning rather than abstract theory. Students practiced ten-finger touch typing, learned how to navigate computer folders and files, practiced safe internet research for school projects, and were introduced to conversational AI tools to help them understand difficult topics in mathematics, basic science, and English grammar.
+
+"We want Nigerian children to be creators and critical thinkers, not just consumers of technology," said Maryam Bello, Lead Trainer at DLM. "When a secondary school learner knows how to ask an AI assistant to explain a difficult physics concept step-by-step, their academic confidence improves tremendously."
+Article 4: Reliable Solar Power Backup Installed for Secondary School Computer Lab in Ibadan
+Category: Equipment Supplies
+Publication Date: July 22, 2026
+Author: Equipment Division
+Read Time: 3 min read
+Summary: Unstable electricity is the number one killer of school computer equipment. DLM installed a 5kVA solar inverter system in an Ibadan secondary school.
+Full Content:
+Frequent electrical surges and sudden power blackouts damage school desktop computers and interrupt examinations. To solve this problem, Divine Leads Media designed and installed a dedicated 5kVA solar inverter power backup system for a secondary school in Ibadan, Oyo State.
+
+The system powers 35 student computers, the master network switch, and room ceiling fans for up to 6 hours during power outages, switching over in zero milliseconds so desktop computers never restart or lose student exam data.
+
+Our engineering team also installed heavy-duty voltage surge protectors to shield sensitive computer motherboards from sudden electrical spikes when public power returns.
+
+6. ARTICLES & PRACTICAL GUIDES
+Website File: articles.html
+Header
+Headline
+Practical Guides & Research Insights
+Subtitle
+Simple, actionable guides for Nigerian school proprietors, principals, exam officers, and teachers.
+Guides & Articles (Full Copy)
+Guide 1: How to Set Up a Reliable 30-Computer CBT Lab on a School Budget
+Tag: CBT & Lab Setup
+Author: Babatunde Ojo (Lead, Equipment Supplies)
+Publication Date: September 8, 2026
+Read Time: 5 min read
+Summary: Practical advice for Nigerian school proprietors on buying durable desktop computers, avoiding fragile laptops, and planning proper room cabling.
+Full Content:
+Setting up a computer-based testing (CBT) lab is one of the best investments a Nigerian school can make, but many proprietors waste money on fragile equipment that breaks down within months. Here are four practical guidelines to follow:
+
+1. Prefer Desktop Computers Over Laptops for Student Labs:
+While laptops seem attractive because of built-in batteries, secondary school students easily damage laptop hinges, spill liquids on keyboards, and damage delicate power ports. Sturdy desktop computers with separate keyboards and monitors last much longer. If a student spills water on a desktop keyboard, replacing the keyboard costs less than ₦3,500, whereas replacing a laptop keyboard can cost ₦25,000 or more.
+
+2. Invest in Structured Wired LAN (Ethernet), Not Just Wi-Fi:
+Wi-Fi networks become congested when 30 or 50 students attempt to submit exam answers simultaneously. High-grade CAT6 Ethernet cables connected to gigabit network switches provide instant, lag-free examination connections that never drop during mock tests.
+
+3. Protect Systems with Inverters and Surge Protectors:
+Never connect school computers directly to raw public power or unstable generators. A central pure sine wave inverter with surge protectors absorbs voltage spikes and keeps your examination running smoothly even when the national grid cuts out.
+
+4. Choose Sturdy Computer Desks with Cable Trays:
+Keep cables hidden behind tables to prevent students from tripping on power cords and crashing monitors to the floor.
+Guide 2: Why Nigerian Schools Should Stop Hand-Writing Student Report Cards
+Tag: School Software
+Author: Eesuola Joshua Damilare (Founder & Lead Technologist)
+Publication Date: August 19, 2026
+Read Time: 6 min read
+Summary: Manual calculations waste hundreds of teacher hours, cause math errors, and delay end-of-term vacations. Here is why offline software is the answer.
+Full Content:
+At the end of every school term, an exhausted calm falls over staff rooms across Nigeria. Teachers sit surrounded by stacks of notebooks, calculators, red pens, and blank cardboard sheets, calculating totals, finding averages, assigning class positions, and copying marks onto paper report cards.
+
+Here are three reasons why this manual system hurts schools:
+
+1. Mathematical Errors Cause Unnecessary Disputes with Parents:
+When a tired teacher calculates 12 subjects for 45 students by hand, addition errors are inevitable. A simple mistake of 10 marks can alter a student's position from 3rd to 7th, leading to angry parent confrontations and damaging the school's reputation.
+
+2. Wasted Teacher Hours Could Be Spent Teaching:
+Teachers spend up to 40 hours per term simply calculating marks and rewriting student remarks. When software handles calculations, teachers can use that time to prepare lesson notes, assist struggling pupils, or rest before the next term begins.
+
+3. Physical Paper Cards Get Lost or Altered:
+Handwritten paper sheets are easily damaged by rain, misplaced, or forged. Offline software like DLM ResultDesk saves permanent digital records that can be reprinted in seconds five or ten years later.
+
+The solution does not require expensive monthly internet subscriptions. An offline tool installed on a school laptop does all the work without consuming internet data.
+Guide 3: Practical Ways to Teach AI Literacy to Secondary School Pupils
+Tag: AI & Learner Skills
+Author: Maryam Bello (Lead Facilitator, Learner Skills)
+Publication Date: August 2, 2026
+Read Time: 4 min read
+Summary: Artificial intelligence is not just for software developers. Here is how Nigerian teachers can guide secondary school students to use AI tools for learning.
+Full Content:
+Many educators worry that artificial intelligence (AI) will encourage students to cheat on homework. However, when taught properly, AI can be the most patient personal tutor a Nigerian student has ever had.
+
+Here is how schools can introduce AI literacy responsibly:
+
+1. Teach Students How to Ask Good Questions (Prompting):
+Show students how to ask AI: 'Explain photosynthesis as if I were in JSS 2, and give me three real-life Nigerian examples.' This teaches children how to articulate clear questions and dissect complex academic topics.
+
+2. Teach Verification and Fact-Checking:
+AI models sometimes give inaccurate information. Have students cross-reference AI answers with their approved Nigerian textbooks (such as Stan Biology or New General Mathematics) to spot errors and verify facts.
+
+3. Emphasize Academic Honesty:
+Teach students that using AI to explain a difficult concept is smart learning, but copying AI text into an assignment without understanding it deprives them of real knowledge.
+Guide 4: Solving School Power Failures with Solar Inverters for Computer Labs
+Tag: Power & Infrastructure
+Author: Babatunde Ojo (Equipment Supplies Lead)
+Publication Date: July 15, 2026
+Read Time: 5 min read
+Summary: How to calculate your school's computer lab power needs, select reliable inverters, and avoid wasting money on weak batteries.
+Full Content:
+Nigeria's public power supply is unpredictable, and frequent generator fuel costs quickly strain a school's operating budget. For a computer lab or CBT center, sudden blackouts are especially dangerous because they can wipe out ongoing exam data and burn desktop power supplies.
+
+A properly sized solar inverter system provides a silent, automatic, and cost-effective power shield:
+
+1. Calculate Your Exact Power Load:
+Modern energy-efficient desktop computers with LED monitors consume approximately 65 to 80 watts each. A 30-seater lab therefore requires around 2,400 watts of active power. A 5kVA/48V pure sine wave inverter is the ideal capacity for this size of lab.
+
+2. Choose Pure Sine Wave Inverters, Never Modified Sine Wave:
+Modified sine wave inverters produce choppy electricity that overheats computer power supplies and causes desktop fans to buzz loudly. Always insist on pure sine wave inverters to protect delicate electronics.
+
+3. Consider Solar Hybrid Systems:
+By connecting solar panels to the inverter, the system charges directly from sunlight during daytime classes, reducing both generator fuel consumption and electric bills.
+
+7. CONTACT US & SCHOOL INQUIRIES
+Website File: contact.html
+Header
+Headline
+Contact Divine Leads Media
+Subtitle
+Get in touch with our team for school software, computer lab equipment supplies, student skills training, or research collaborations.
+School Inquiry Form Fields
+Full Name: Proprietor, Principal, or School Representative Name
+School Name: Official Name of Primary / Secondary School
+Email Address: Contact email for quotation and correspondence
+Phone / WhatsApp Number: e.g. 0801 234 5678
+State / Location: e.g. Lagos, Ogun, Oyo, Abuja, Rivers, etc.
+Primary Area of Interest: Dropdown options: 
+• DLM ResultDesk (School Report Card Software)
+• Supplies of Computer Lab & CBT Equipments
+• Solar / Inverter Backup Power for Computer Lab
+• Student Digital & AI Skills Workshop
+• General School Partnership & Consultation
+Message / Specific Needs: How can we help your school?
+Direct Contact Information
+Phone / WhatsApp: +234 912 630 0594 (Immediate response during business hours)
+Official Email: admin@divineleadsmedia.com  |  contact@divineleadsmedia.com
+Office Address: Lagos, Nigeria (Deployments & Equipment Supply Available Nationwide)
+Working Hours: Monday – Friday: 8:00 AM – 5:30 PM | Saturday: 9:00 AM – 2:00 PM
+Emergency Exam Support: 24/7 Phone support for partner schools during examination and result processing weeks.
+
+8. CMS ADMIN PORTAL & STAFF ACCESS
+Website File: login.html & cms.html
+CMS Access Overview
+Divine Leads Media includes a built-in administrative dashboard (CMS) allowing staff to post news dispatches, publish articles and guides, register new software downloads, schedule upcoming webinars, and back up all content.
+Default Admin Login Credentials
+Admin Email: admin@divineleadsmedia.com
+Admin Password: password123
+Role: Administrator (Eesuola Joshua Damilare)
+Note: New staff members can also register an account using the 'Sign Up' tab on login.html.
+CMS Dashboard Tabs & Capabilities
+1. Overview Tab: Live statistics showing total published news items, research guides, software downloads, and scheduled webinars.
+2. News Dispatches Tab: Create, edit, preview, and delete school deployment updates and press releases.
+3. Research Articles Tab: Write and format educational guides with category tags, author names, and reading time estimates.
+4. Software Releases Tab: Register new versions of DLM ResultDesk or other tools with file sizes, download URLs, and SHA-256 checksums.
+5. Webinars & Events Tab: Schedule new virtual webinars and physical conferences with date, time, and speaker details.
+6. Backup & Restore Data: Export the complete website database to a single portable JSON file, import backups, or reset to original clean factory data.

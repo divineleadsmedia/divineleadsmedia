@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CMS Dashboard — Divine Leads Media</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M26,48 V20 H48 A28,28 0 0 1 74,36' fill='none' stroke='%230D1B2A' stroke-width='11' stroke-linecap='round'/%3E%3Cpath d='M26,52 V80 H48 A28,28 0 0 0 74,64' fill='none' stroke='%230D1B2A' stroke-width='11' stroke-linecap='round'/%3E%3Ccircle cx='43' cy='50' r='14' fill='%232563EB'/%3E%3Crect x='76' y='44' width='11' height='11' rx='3' fill='%232563EB'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body style="background: var(--dlm-navy-deep);">
+
+  <div class="cms-layout">
+    
+    <!-- Sidebar -->
+    <aside class="cms-sidebar">
+      <div>
+        <a href="index.html" class="brand-logo" style="margin-bottom: 22px;">
+          <svg class="brand-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <path d="M26,48 V20 H48 A28,28 0 0 1 74,36" fill="none" stroke="#FFFFFF" stroke-width="11" stroke-linecap="round"/>
+            <path d="M26,52 V80 H48 A28,28 0 0 0 74,64" fill="none" stroke="#FFFFFF" stroke-width="11" stroke-linecap="round"/>
+            <circle cx="43" cy="50" r="14" fill="#2563EB"/>
+            <rect x="76" y="44" width="11" height="11" rx="3" fill="#2563EB"/>
+          </svg>
+          <div class="brand-text">
+            <span class="brand-title" style="font-size:0.95rem;">DIVINE LEADS</span>
+            <span class="brand-subtitle">CMS DASHBOARD</span>
+          </div>
+        </a>
+
+        <!-- User Profile Card -->
+        <div style="display:flex; align-items:center; gap:10px; padding:10px; background:var(--dlm-navy-deep); border:1px solid var(--border-subtle); border-radius:var(--radius-sm); margin-bottom:18px;">
+          <div style="width:36px; height:36px; border-radius:50%; background:var(--dlm-blue); display:grid; place-items:center; font-weight:700; color:#fff;" id="cmsUserAvatar">
+            EJ
+          </div>
+          <div style="overflow:hidden;">
+            <div style="font-weight:600; font-size:0.86rem; color:#fff; white-space:nowrap; text-overflow:ellipsis; overflow:hidden;" id="cmsUserName">Eesuola Joshua D.</div>
+            <div style="font-size:0.7rem; color:var(--dlm-blue-soft); font-family:var(--font-mono);" id="cmsUserRole">Staff Member</div>
+          </div>
+        </div>
+
+        <ul class="cms-nav-list">
+          <li>
+            <button class="cms-nav-btn active" data-tab="overview">
+              <span>📊</span> <span>Overview</span>
+            </button>
+          </li>
+          <li>
+            <button class="cms-nav-btn" data-tab="articles">
+              <span>📝</span> <span>Articles &amp; Guides</span>
+              <span class="status-pill published" style="margin-left:auto; font-size:0.65rem; padding:1px 6px;" id="navCountArticles">0</span>
+            </button>
+          </li>
+          <li>
+            <button class="cms-nav-btn" data-tab="news">
+              <span>📰</span> <span>School News</span>
+              <span class="status-pill published" style="margin-left:auto; font-size:0.65rem; padding:1px 6px;" id="navCountNews">0</span>
+            </button>
+          </li>
+          <li>
+            <button class="cms-nav-btn" data-tab="downloads">
+              <span>🚀</span> <span>Downloads</span>
+            </button>
+          </li>
+          <li>
+            <button class="cms-nav-btn" data-tab="webinars">
+              <span>📅</span> <span>Upcoming Webinars</span>
+            </button>
+          </li>
+          <li>
+            <button class="cms-nav-btn" data-tab="backup">
+              <span>💾</span> <span>Backup &amp; Reset</span>
+            </button>
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <a href="index.html" class="btn btn-secondary btn-sm" style="width:100%; margin-bottom:8px; justify-content:center;">
+          ← View Website
+        </a>
+        <button id="cmsLogoutBtn" class="btn btn-sm" style="width:100%; background:rgba(239, 68, 68, 0.15); border:1px solid rgba(239, 68, 68, 0.4); color:#EF4444; justify-content:center;">
+          Sign Out
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main Dashboard Area -->
+    <main class="cms-main">
+      <div class="cms-topbar">
+        <div>
+          <div class="badge" style="margin-bottom:6px;">MANAGEMENT PORTAL</div>
+          <h1 class="section-title" style="font-size: 1.7rem; margin-bottom:0;">Content &amp; Releases Manager</h1>
+        </div>
+        <a href="index.html" target="_blank" class="btn btn-primary btn-sm">Open Live Website ↗</a>
+      </div>
+
+      <!-- VIEW 1: OVERVIEW -->
+      <div class="cms-view" id="view-overview">
+        <div class="cms-stats-row">
+          <div class="cms-stat-box">
+            <h4>Published News</h4>
+            <div class="cms-stat-num text-blue" id="statTotalNews">0</div>
+          </div>
+          <div class="cms-stat-box">
+            <h4>Articles &amp; Guides</h4>
+            <div class="cms-stat-num text-green" id="statTotalArticles">0</div>
+          </div>
+          <div class="cms-stat-box">
+            <h4>Active Downloads</h4>
+            <div class="cms-stat-num" id="statTotalDownloads">0</div>
+          </div>
+          <div class="cms-stat-box">
+            <h4>Scheduled Webinars</h4>
+            <div class="cms-stat-num text-blue" id="statTotalWebinars">0</div>
+          </div>
+        </div>
+
+        <div style="background:var(--dlm-navy-surface); border:1px solid var(--border-subtle); border-radius:var(--radius-md); padding:28px; margin-bottom:28px;">
+          <h3 style="font-family:var(--font-display); font-size:1.25rem; margin-bottom:10px; color:#fff;">Welcome to Divine Leads Media CMS</h3>
+          <p style="color:var(--text-muted); font-size:0.92rem; line-height:1.6; max-width:800px; margin-bottom:20px;">
+            Manage school news announcements, practical articles, downloadable software packages (like DLM ResultDesk), and upcoming webinars. Everything you save here updates instantly on the live website.
+          </p>
+          <div style="display:flex; gap:12px; flex-wrap:wrap;">
+            <button class="btn btn-primary btn-sm" onclick="document.querySelector('.cms-nav-btn[data-tab=\'news\']').click()">+ Post School News</button>
+            <button class="btn btn-secondary btn-sm" onclick="document.querySelector('.cms-nav-btn[data-tab=\'articles\']').click()">+ Write Article</button>
+            <button class="btn btn-secondary btn-sm" onclick="document.querySelector('.cms-nav-btn[data-tab=\'downloads\']').click()">+ Add Download Package</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- VIEW 2: MANAGE ARTICLES -->
+      <div class="cms-view" id="view-articles" style="display:none;">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px; flex-wrap:wrap; gap:12px;">
+          <div>
+            <h2 style="font-family:var(--font-display); font-size:1.4rem; color:#fff; margin-bottom:4px;">Articles &amp; School Guides</h2>
+            <p style="color:var(--text-muted); font-size:0.85rem;">Practical education guides, ResultDesk tutorials, and research articles for educators.</p>
+          </div>
+          <button class="btn btn-primary btn-sm" id="btnAddNewArticle">+ Write New Guide</button>
+        </div>
+
+        <!-- Filter & Search Bar -->
+        <div class="cms-filter-bar">
+          <div class="cms-filter-tabs" id="articleStatusFilterTabs">
+            <button class="cms-filter-tab active" data-filter="all">All Guides (<span id="countArtAll">0</span>)</button>
+            <button class="cms-filter-tab" data-filter="published">Published (<span id="countArtPublished">0</span>)</button>
+            <button class="cms-filter-tab" data-filter="draft">Drafts (<span id="countArtDraft">0</span>)</button>
+          </div>
+          <div class="cms-search-box">
+            <span style="color:var(--text-dim); margin-right:6px;">🔍</span>
+            <input type="text" id="articlesSearchInput" placeholder="Search articles or tags...">
+          </div>
+        </div>
+
+        <div style="overflow-x:auto;">
+          <table class="cms-table">
+            <thead>
+              <tr>
+                <th style="width:42%;">Article Title &amp; Cover</th>
+                <th>Topic &amp; Tags</th>
+                <th>Author</th>
+                <th>Date</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="cmsArticlesTableBody"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- VIEW: ARTICLE ROOM STUDIO (POST EDITORIAL SUITE) -->
+      <div class="cms-view article-room" id="view-article-editor" style="display:none;">
+        <!-- Studio Sticky Header Bar -->
+        <div class="room-topbar">
+          <div class="room-topbar-left">
+            <button type="button" class="btn-room-back" id="btnBackToArticles">
+              ← Back to Articles
+            </button>
+            <div class="room-breadcrumb">
+              <span>Articles</span>
+              <span>/</span>
+              <span class="active-doc" id="artStudioDocTitle">Untitled Guide</span>
+            </div>
+          </div>
+
+          <div class="room-topbar-center">
+            <span class="room-doc-stats" id="artStudioWordCount">0 words · 1 min read</span>
+            <span class="status-pill published" id="artStudioStatusBadge">● Published</span>
+          </div>
+
+          <div class="room-topbar-right">
+            <button type="button" class="btn btn-secondary btn-sm" id="btnToggleArtPreview">
+              👁 Live Preview
+            </button>
+            <button type="button" class="btn btn-secondary btn-sm" id="btnArtSaveDraft">
+              Save Draft
+            </button>
+            <button type="button" class="btn btn-primary btn-sm" id="btnArtPublish">
+              Publish Guide →
+            </button>
+            <button type="button" class="btn btn-secondary btn-sm" id="btnToggleArtInspector" title="Toggle Settings">
+              ⚙
+            </button>
+          </div>
+        </div>
+
+        <!-- Studio Grid -->
+        <div class="room-grid" id="artStudioGrid">
+          <!-- Main Canvas -->
+          <div class="room-canvas">
+            <input type="hidden" id="artStudioId">
+            <input type="text" id="artStudioTitle" class="room-title-input" placeholder="Enter guide title here..." autocomplete="off">
+
+            <!-- Formatting Toolbar -->
+            <div class="room-toolbar">
+              <button type="button" class="toolbar-btn" data-tool="bold" title="Bold"><b>B</b></button>
+              <button type="button" class="toolbar-btn" data-tool="italic" title="Italic"><i>I</i></button>
+              <div class="toolbar-sep"></div>
+              <button type="button" class="toolbar-btn" data-tool="h2" title="Heading 2">H2</button>
+              <button type="button" class="toolbar-btn" data-tool="h3" title="Heading 3">H3</button>
+              <div class="toolbar-sep"></div>
+              <button type="button" class="toolbar-btn" data-tool="quote" title="Quote">“ ”</button>
+              <button type="button" class="toolbar-btn" data-tool="ul" title="Bulleted List">• List</button>
+              <button type="button" class="toolbar-btn" data-tool="ol" title="Numbered List">1. List</button>
+              <button type="button" class="toolbar-btn" data-tool="code" title="Code Block">&lt;/&gt;</button>
+              <div class="toolbar-sep"></div>
+              <button type="button" class="toolbar-btn" data-tool="link" title="Insert Link">🔗</button>
+              <button type="button" class="toolbar-btn" data-tool="hr" title="Divider">—</button>
+            </div>
+
+            <!-- Content Area -->
+            <div class="room-editor-container">
+              <textarea id="artStudioContent" class="room-textarea" placeholder="Start writing your practical guide or research article... You can format with headings, bullet points, quotes, and links."></textarea>
+              <div id="artStudioLivePreview" class="room-live-preview"></div>
+            </div>
+
+            <!-- Excerpt / Summary -->
+            <div class="room-excerpt-box">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+                <label style="margin:0;">Excerpt &amp; Summary</label>
+                <button type="button" id="btnAutoGenerateArtSummary" class="btn btn-secondary btn-sm" style="font-size:0.72rem; padding:2px 8px;">
+                  ⚡ Auto-fill
+                </button>
+              </div>
+              <textarea id="artStudioSummary" rows="2" placeholder="Brief summary of what this article teaches. Used in post cards and search previews."></textarea>
+            </div>
+          </div>
+
+          <!-- Inspector Sidebar -->
+          <aside class="room-inspector" id="artStudioInspector">
+            <!-- 1. Status & Visibility -->
+            <div class="inspector-card">
+              <div class="inspector-header">
+                <span>Status &amp; Visibility</span>
+                <span class="font-mono text-blue" style="font-size:0.7rem;">DLM Guide</span>
+              </div>
+              
+              <div class="publish-status-toggle">
+                <button type="button" class="status-toggle-btn active published" id="artStatusBtnPublished">
+                  ✓ Published
+                </button>
+                <button type="button" class="status-toggle-btn" id="artStatusBtnDraft">
+                  ✎ Draft
+                </button>
+              </div>
+
+              <div class="form-group" style="margin-bottom:12px;">
+                <label class="form-label" style="font-size:0.75rem;">Topic / Primary Category</label>
+                <select id="artStudioCategory" class="form-control">
+                  <option value="Software & AI">Software &amp; AI</option>
+                  <option value="Equipment Supply">Equipment Supply</option>
+                  <option value="AI Skills">AI &amp; Student Skills</option>
+                  <option value="School Management">School Management</option>
+                  <option value="Teacher Training">Teacher Training</option>
+                </select>
+              </div>
+
+              <div class="form-group" style="margin-bottom:12px;">
+                <label class="form-label" style="font-size:0.75rem;">Publication Date</label>
+                <div style="display:flex; gap:6px;">
+                  <input type="text" id="artStudioDate" class="form-control" style="font-size:0.82rem;">
+                  <button type="button" class="btn btn-secondary btn-sm" id="btnArtDateToday" style="padding:4px 10px; font-size:0.75rem;">Now</button>
+                </div>
+              </div>
+
+              <div style="display:grid; grid-template-columns: 1.2fr 0.8fr; gap:8px; margin-bottom:12px;">
+                <div class="form-group">
+                  <label class="form-label" style="font-size:0.75rem;">Author Name</label>
+                  <input type="text" id="artStudioAuthor" class="form-control" style="font-size:0.82rem;">
+                </div>
+                <div class="form-group">
+                  <label class="form-label" style="font-size:0.75rem;">Read Time</label>
+                  <input type="text" id="artStudioReadTime" class="form-control" style="font-size:0.82rem;" placeholder="4 min read">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" style="font-size:0.75rem;">Author Role / Title</label>
+                <input type="text" id="artStudioRole" class="form-control" style="font-size:0.82rem;" placeholder="e.g. Lead Technologist">
+              </div>
+            </div>
+
+            <!-- 2. Featured Image Configuration -->
+            <div class="inspector-card">
+              <div class="inspector-header">
+                <span>Featured Cover Image</span>
+                <span class="text-green font-mono" style="font-size:0.7rem;">Post Media</span>
+              </div>
+
+              <div class="featured-image-manager">
+                <div class="image-preview-frame has-image" id="artCoverPreviewFrame">
+                  <img id="artCoverPreviewImg" src="" alt="Featured cover image">
+                  <div class="image-preview-empty" id="artCoverEmptyState" style="display:none;">
+                    <span style="font-size:1.6rem;">🖼️</span>
+                    <span>No featured image selected</span>
+                  </div>
+                  <div class="image-preview-actions">
+                    <button type="button" class="btn-img-action" id="btnArtChangeImg">Replace</button>
+                    <button type="button" class="btn-img-action danger" id="btnArtRemoveImg">Remove</button>
+                  </div>
+                </div>
+
+                <div>
+                  <label class="form-label" style="font-size:0.75rem;">Image URL</label>
+                  <input type="url" id="artStudioCover" class="form-control" placeholder="https://images.unsplash.com/..." style="font-size:0.82rem;">
+                </div>
+
+                <div>
+                  <label class="btn btn-secondary btn-sm" style="width:100%; cursor:pointer; justify-content:center;">
+                    📁 Upload Local Image File
+                    <input type="file" id="artStudioCoverFileInput" accept="image/*" style="display:none;">
+                  </label>
+                </div>
+
+                <div>
+                  <label class="form-label" style="font-size:0.72rem; color:var(--text-dim); margin-bottom:4px;">Quick Presets:</label>
+                  <div class="image-presets-grid" id="artCoverPresets">
+                    <div class="image-preset-thumb" data-url="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1000&q=80" title="Software & Research">
+                      <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=200&q=60" alt="Tech">
+                    </div>
+                    <div class="image-preset-thumb" data-url="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1000&q=80" title="Computer Lab">
+                      <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=200&q=60" alt="Lab">
+                    </div>
+                    <div class="image-preset-thumb" data-url="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=1000&q=80" title="AI Skills & Students">
+                      <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=200&q=60" alt="Students">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group" style="margin-top:4px;">
+                  <label class="form-label" style="font-size:0.75rem;">Cover Alt Text (SEO)</label>
+                  <input type="text" id="artStudioCoverAlt" class="form-control" placeholder="Describe the image..." style="font-size:0.82rem;">
+                </div>
+              </div>
+            </div>
+
+            <!-- 3. Tags Configuration Room -->
+            <div class="inspector-card">
+              <div class="inspector-header">
+                <span>Tags Configuration Room</span>
+                <span id="artTagsCountBadge" class="font-mono text-blue" style="font-size:0.7rem;">0 tags</span>
+              </div>
+
+              <div class="tags-manager">
+                <p style="font-size:0.78rem; color:var(--text-dim); line-height:1.4;">
+                  Add interactive tags to help students and educators discover your guide.
+                </p>
+
+                <div class="tags-chips-container" id="artTagsChipsContainer">
+                  <!-- Tag pills rendered dynamically -->
+                </div>
+
+                <div>
+                  <input type="text" id="artTagInputField" class="tag-input-field" placeholder="Type tag and press Enter or comma...">
+                </div>
+
+                <div>
+                  <div style="font-size:0.72rem; color:var(--text-dim); margin-bottom:6px;">Suggested Tags:</div>
+                  <div class="suggested-tags-cloud" id="artSuggestedTagsCloud">
+                    <button type="button" class="suggested-tag-btn" data-tag="DLM ResultDesk">+ ResultDesk</button>
+                    <button type="button" class="suggested-tag-btn" data-tag="EdTech">+ EdTech</button>
+                    <button type="button" class="suggested-tag-btn" data-tag="TeacherTools">+ TeacherTools</button>
+                    <button type="button" class="suggested-tag-btn" data-tag="AIInSchools">+ AIInSchools</button>
+                    <button type="button" class="suggested-tag-btn" data-tag="ComputerLab">+ ComputerLab</button>
+                    <button type="button" class="suggested-tag-btn" data-tag="CBTExams">+ CBTExams</button>
+                    <button type="button" class="suggested-tag-btn" data-tag="NigeriaEducation">+ NigeriaEducation</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 4. Google & Social Card Snippet Preview -->
+            <div class="inspector-card">
+              <div class="inspector-header">
+                <span>Google Search &amp; Social Preview</span>
+                <span class="font-mono text-slate" style="font-size:0.7rem;">Snippet</span>
+              </div>
+
+              <div class="seo-preview-card">
+                <div class="seo-preview-url">divineleadsmedia.com › articles › guide</div>
+                <div class="seo-preview-title" id="artSeoPreviewTitle">Article Title</div>
+                <div class="seo-preview-desc" id="artSeoPreviewDesc">Brief summary of what this guide teaches...</div>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+
+      <!-- VIEW 3: MANAGE NEWS -->
+      <div class="cms-view" id="view-news" style="display:none;">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px; flex-wrap:wrap; gap:12px;">
+          <div>
+            <h2 style="font-family:var(--font-display); font-size:1.4rem; color:#fff; margin-bottom:4px;">School News &amp; Updates</h2>
+            <p style="color:var(--text-muted); font-size:0.85rem;">Publish school rollouts, partnerships, equipment supplies, and media press dispatches.</p>
+          </div>
+          <button class="btn btn-primary btn-sm" id="btnAddNewNews">+ Post New Update</button>
+        </div>
+
+        <!-- Filter & Search Bar -->
+        <div class="cms-filter-bar">
+          <div class="cms-filter-tabs" id="newsStatusFilterTabs">
+            <button class="cms-filter-tab active" data-filter="all">All News (<span id="countNewsAll">0</span>)</button>
+            <button class="cms-filter-tab" data-filter="published">Published (<span id="countNewsPublished">0</span>)</button>
+            <button class="cms-filter-tab" data-filter="draft">Drafts (<span id="countNewsDraft">0</span>)</button>
+          </div>
+          <div class="cms-search-box">
+            <span style="color:var(--text-dim); margin-right:6px;">🔍</span>
+            <input type="text" id="newsSearchInput" placeholder="Search news by title or tag...">
+          </div>
+        </div>
+
+        <div style="overflow-x:auto;">
+          <table class="cms-table">
+            <thead>
+              <tr>
+                <th style="width:40%;">News Dispatch &amp; Cover</th>
+                <th>Category &amp; Tags</th>
+                <th>Date</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="cmsNewsTableBody"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- VIEW: NEWS ROOM STUDIO (POST EDITORIAL SUITE) -->
+      <div class="cms-view article-room" id="view-news-editor" style="display:none;">
+        <div class="room-topbar">
+          <div class="room-topbar-left">
+            <button type="button" class="btn-room-back" id="btnBackToNews">
+              ← Back to News
+            </button>
+            <div class="room-breadcrumb">
+              <span>News</span>
+              <span>/</span>
+              <span class="active-doc" id="newsStudioDocTitle">Untitled Dispatch</span>
+            </div>
+          </div>
+
+          <div class="room-topbar-center">
+            <span class="room-doc-stats" id="newsStudioWordCount">0 words · 1 min read</span>
+            <span class="status-pill published" id="newsStudioStatusBadge">● Published</span>
+          </div>
+
+          <div class="room-topbar-right">
+            <button type="button" class="btn btn-secondary btn-sm" id="btnToggleNewsPreview">
+              👁 Live Preview
+            </button>
+            <button type="button" class="btn btn-secondary btn-sm" id="btnNewsSaveDraft">
+              Save Draft
+            </button>
+            <button type="button" class="btn btn-primary btn-sm" id="btnNewsPublish">
+              Publish Dispatch →
+            </button>
+            <button type="button" class="btn btn-secondary btn-sm" id="btnToggleNewsInspector" title="Toggle Settings">
+              ⚙
+            </button>
+          </div>
+        </div>
+
+        <div class="room-grid" id="newsStudioGrid">
+          <div class="room-canvas">
+            <input type="hidden" id="newsStudioId">
+            <input type="text" id="newsStudioTitle" class="room-title-input" placeholder="Enter news headline here..." autocomplete="off">
+
+            <div class="room-toolbar">
+              <button type="button" class="toolbar-btn" data-news-tool="bold" title="Bold"><b>B</b></button>
+              <button type="button" class="toolbar-btn" data-news-tool="italic" title="Italic"><i>I</i></button>
+              <div class="toolbar-sep"></div>
+              <button type="button" class="toolbar-btn" data-news-tool="h2" title="Heading 2">H2</button>
+              <button type="button" class="toolbar-btn" data-news-tool="h3" title="Heading 3">H3</button>
+              <div class="toolbar-sep"></div>
+              <button type="button" class="toolbar-btn" data-news-tool="quote" title="Quote">“ ”</button>
+              <button type="button" class="toolbar-btn" data-news-tool="ul" title="Bulleted List">• List</button>
+              <button type="button" class="toolbar-btn" data-news-tool="link" title="Link">🔗</button>
+            </div>
+
+            <div class="room-editor-container">
+              <textarea id="newsStudioContent" class="room-textarea" placeholder="Full news dispatch story details..."></textarea>
+              <div id="newsStudioLivePreview" class="room-live-preview"></div>
+            </div>
+
+            <div class="room-excerpt-box">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+                <label style="margin:0;">Short Lead / Summary</label>
+                <button type="button" id="btnAutoGenerateNewsSummary" class="btn btn-secondary btn-sm" style="font-size:0.72rem; padding:2px 8px;">
+                  ⚡ Auto-fill
+                </button>
+              </div>
+              <textarea id="newsStudioSummary" rows="2" placeholder="Brief summary of the announcement for news cards..."></textarea>
+            </div>
+          </div>
+
+          <aside class="room-inspector">
+            <div class="inspector-card">
+              <div class="inspector-header">
+                <span>Status &amp; Publishing</span>
+                <span class="font-mono text-blue" style="font-size:0.7rem;">Newsroom</span>
+              </div>
+
+              <div class="publish-status-toggle">
+                <button type="button" class="status-toggle-btn active published" id="newsStatusBtnPublished">
+                  ✓ Published
+                </button>
+                <button type="button" class="status-toggle-btn" id="newsStatusBtnDraft">
+                  ✎ Draft
+                </button>
+              </div>
+
+              <div class="form-group" style="margin-bottom:12px;">
+                <label class="form-label" style="font-size:0.75rem;">Category</label>
+                <select id="newsStudioCategory" class="form-control">
+                  <option value="Software Deployment">Software Deployment</option>
+                  <option value="Equipment Supply">Equipment Supply</option>
+                  <option value="Learner Skills">Student Skills Training</option>
+                  <option value="School Partnership">School Partnership</option>
+                </select>
+              </div>
+
+              <div class="form-group" style="margin-bottom:12px;">
+                <label class="form-label" style="font-size:0.75rem;">Publication Date</label>
+                <div style="display:flex; gap:6px;">
+                  <input type="text" id="newsStudioDate" class="form-control" style="font-size:0.82rem;">
+                  <button type="button" class="btn btn-secondary btn-sm" id="btnNewsDateToday" style="padding:4px 10px; font-size:0.75rem;">Now</button>
+                </div>
+              </div>
+
+              <div style="display:grid; grid-template-columns: 1.2fr 0.8fr; gap:8px;">
+                <div class="form-group">
+                  <label class="form-label" style="font-size:0.75rem;">Author / Source</label>
+                  <input type="text" id="newsStudioAuthor" class="form-control" style="font-size:0.82rem;" placeholder="DLM Media Team">
+                </div>
+                <div class="form-group">
+                  <label class="form-label" style="font-size:0.75rem;">Read Time</label>
+                  <input type="text" id="newsStudioReadTime" class="form-control" style="font-size:0.82rem;" placeholder="3 min read">
+                </div>
+              </div>
+            </div>
+
+            <div class="inspector-card">
+              <div class="inspector-header">
+                <span>Featured Photo</span>
+                <span class="text-green font-mono" style="font-size:0.7rem;">Media</span>
+              </div>
+
+              <div class="featured-image-manager">
+                <div class="image-preview-frame has-image" id="newsCoverPreviewFrame">
+                  <img id="newsCoverPreviewImg" src="" alt="News cover">
+                  <div class="image-preview-empty" id="newsCoverEmptyState" style="display:none;">
+                    <span style="font-size:1.6rem;">📷</span>
+                    <span>No image attached</span>
+                  </div>
+                  <div class="image-preview-actions">
+                    <button type="button" class="btn-img-action" id="btnNewsChangeImg">Replace</button>
+                    <button type="button" class="btn-img-action danger" id="btnNewsRemoveImg">Remove</button>
+                  </div>
+                </div>
+
+                <div>
+                  <label class="form-label" style="font-size:0.75rem;">Image URL</label>
+                  <input type="url" id="newsStudioImage" class="form-control" placeholder="https://..." style="font-size:0.82rem;">
+                </div>
+
+                <div>
+                  <label class="btn btn-secondary btn-sm" style="width:100%; cursor:pointer; justify-content:center;">
+                    📁 Upload Local Photo
+                    <input type="file" id="newsStudioCoverFileInput" accept="image/*" style="display:none;">
+                  </label>
+                </div>
+
+                <div>
+                  <label class="form-label" style="font-size:0.72rem; color:var(--text-dim); margin-bottom:4px;">Quick Presets:</label>
+                  <div class="image-presets-grid" id="newsCoverPresets">
+                    <div class="image-preset-thumb" data-url="https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=800&q=80">
+                      <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=200&q=60" alt="Schools">
+                    </div>
+                    <div class="image-preset-thumb" data-url="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80">
+                      <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=200&q=60" alt="Equip">
+                    </div>
+                    <div class="image-preset-thumb" data-url="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=800&q=80">
+                      <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=200&q=60" alt="Students">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="inspector-card">
+              <div class="inspector-header">
+                <span>Tags Configuration Room</span>
+                <span id="newsTagsCountBadge" class="font-mono text-blue" style="font-size:0.7rem;">0 tags</span>
+              </div>
+
+              <div class="tags-manager">
+                <div class="tags-chips-container" id="newsTagsChipsContainer"></div>
+                <input type="text" id="newsTagInputField" class="tag-input-field" placeholder="Type tag and press Enter or comma...">
+                <div class="suggested-tags-cloud" id="newsSuggestedTagsCloud">
+                  <button type="button" class="suggested-tag-btn" data-tag="Deployment">+ Deployment</button>
+                  <button type="button" class="suggested-tag-btn" data-tag="Equipment">+ Equipment</button>
+                  <button type="button" class="suggested-tag-btn" data-tag="Workshop">+ Workshop</button>
+                  <button type="button" class="suggested-tag-btn" data-tag="LagosSchools">+ LagosSchools</button>
+                </div>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+
+      <!-- VIEW 4: MANAGE DOWNLOADS -->
+      <div class="cms-view" id="view-downloads" style="display:none;">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px;">
+          <h2 style="font-family:var(--font-display); font-size:1.4rem; color:#fff;">Software Releases &amp; Templates</h2>
+          <button class="btn btn-primary btn-sm" id="btnAddNewDownload">+ Add New Release</button>
+        </div>
+        <div style="overflow-x:auto;">
+          <table class="cms-table">
+            <thead>
+              <tr>
+                <th>Package Name</th>
+                <th>Version</th>
+                <th>Platform</th>
+                <th>Category</th>
+                <th>File Size</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="cmsDownloadsTableBody"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- VIEW 5: MANAGE WEBINARS -->
+      <div class="cms-view" id="view-webinars" style="display:none;">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px;">
+          <h2 style="font-family:var(--font-display); font-size:1.4rem; color:#fff;">Upcoming Webinars</h2>
+          <button class="btn btn-primary btn-sm" id="btnAddNewWebinar">+ Schedule Webinar</button>
+        </div>
+        <div style="overflow-x:auto;">
+          <table class="cms-table">
+            <thead>
+              <tr>
+                <th>Event Title</th>
+                <th>Type</th>
+                <th>Date</th>
+                <th>Speakers</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="cmsWebinarsTableBody"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- VIEW 6: BACKUP & RESTORE -->
+      <div class="cms-view" id="view-backup" style="display:none;">
+        <div style="background:var(--dlm-navy-surface); border:1px solid var(--border-subtle); border-radius:var(--radius-md); padding:32px; max-width:720px;">
+          <div class="badge" style="margin-bottom:12px;">SITE DATA MANAGEMENT</div>
+          <h2 style="font-family:var(--font-display); font-size:1.5rem; color:#fff; margin-bottom:10px;">Export or Restore Data</h2>
+          <p style="color:var(--text-muted); font-size:0.92rem; line-height:1.6; margin-bottom:24px;">
+            Save a copy of all your articles, news, and downloads to your computer, or restore them anytime.
+          </p>
+
+          <div style="display:flex; gap:12px; flex-wrap:wrap;">
+            <button class="btn btn-primary" id="btnExportBackup">Export Backup File (JSON)</button>
+            <button class="btn btn-secondary" id="btnImportBackup">Restore from JSON</button>
+            <input type="file" id="backupFileInput" accept=".json" style="display:none;">
+          </div>
+
+          <div style="margin-top:28px; padding-top:20px; border-top:1px solid var(--border-subtle);">
+            <div style="font-family:var(--font-mono); font-size:0.78rem; color:#EF4444; margin-bottom:6px;">FACTORY RESET</div>
+            <p style="font-size:0.84rem; color:var(--text-muted); margin-bottom:12px;">
+              Reset all records to the original clean Divine Leads Media information.
+            </p>
+            <button class="btn btn-sm" id="btnResetDefaults" style="background:rgba(239, 68, 68, 0.2); border:1px solid #EF4444; color:#EF4444;">
+              Reset to Factory Defaults
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- ================= MODALS FOR CRUD ================= -->
+  
+  <!-- Download Release Modal -->
+  <div class="modal-overlay" id="modalDownloadForm">
+    <div class="modal-container">
+      <button class="modal-close-btn" aria-label="Close">✕</button>
+      <h3 class="section-title" id="dlModalTitle" style="font-size:1.5rem; margin-bottom:18px;">Add Software Release</h3>
+      <form id="formDownload">
+        <input type="hidden" id="dlFormId">
+        <div style="display:grid; grid-template-columns: 1.4fr 0.6fr; gap:14px;">
+          <div class="form-group">
+            <label class="form-label">Package Name *</label>
+            <input type="text" id="dlFormName" class="form-control" required placeholder="e.g. DLM ResultDesk Desktop">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Version *</label>
+            <input type="text" id="dlFormVersion" class="form-control" required placeholder="e.g. v1.4.3">
+          </div>
+        </div>
+        <div style="display:grid; grid-template-columns: 1fr 1fr; gap:14px;">
+          <div class="form-group">
+            <label class="form-label">Platform *</label>
+            <input type="text" id="dlFormPlatform" class="form-control" required placeholder="e.g. Windows 11, 10, 8, 7">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Category *</label>
+            <select id="dlFormTag" class="form-control" required>
+              <option value="School Software">School Software</option>
+              <option value="Media Production">Media Production</option>
+              <option value="Free School Resource">Free School Resource</option>
+            </select>
+          </div>
+        </div>
+        <div style="display:grid; grid-template-columns: 1fr 1fr; gap:14px;">
+          <div class="form-group">
+            <label class="form-label">File Size</label>
+            <input type="text" id="dlFormSize" class="form-control" required placeholder="e.g. 48.6 MB">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Release Date</label>
+            <input type="text" id="dlFormDate" class="form-control" required placeholder="e.g. September 2026">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Download Link or Anchor</label>
+          <input type="text" id="dlFormUrl" class="form-control" placeholder="#download-resultdesk">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Description *</label>
+          <textarea id="dlFormDesc" class="form-control" rows="2" required placeholder="What does this package do..."></textarea>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Key Features (One per line)</label>
+          <textarea id="dlFormFeatures" class="form-control" rows="3" placeholder="Automatic broadsheet calculation&#10;Prints student report cards&#10;100% offline capability"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:100%;">Save Release Package →</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Webinar Modal -->
+  <div class="modal-overlay" id="modalWebinarForm">
+    <div class="modal-container">
+      <button class="modal-close-btn" aria-label="Close">✕</button>
+      <h3 class="section-title" style="font-size:1.5rem; margin-bottom:18px;">Schedule Webinar</h3>
+      <form id="formWebinar">
+        <div class="form-group">
+          <label class="form-label">Event Title *</label>
+          <input type="text" id="webFormTitle" class="form-control" required placeholder="e.g. Transforming School Records with Tech">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Event Type</label>
+          <select id="webFormType" class="form-control">
+            <option value="Online Webinar">Online Webinar</option>
+            <option value="Live Workshop">Live Workshop</option>
+            <option value="School Conference">School Conference</option>
+          </select>
+        </div>
+        <div style="display:grid; grid-template-columns: 1fr 1fr; gap:14px;">
+          <div class="form-group">
+            <label class="form-label">Date *</label>
+            <input type="text" id="webFormDate" class="form-control" required placeholder="e.g. October 20, 2026">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Time</label>
+            <input type="text" id="webFormTime" class="form-control" placeholder="e.g. 11:00 AM WAT">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Speakers</label>
+          <input type="text" id="webFormSpeakers" class="form-control" placeholder="e.g. Eesuola Joshua Damilare">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Description</label>
+          <textarea id="webFormDesc" class="form-control" rows="3" placeholder="Overview of the session..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:100%;">Schedule Event →</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="assets/js/db.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/cms.js"></script>
+</body>
+</html>

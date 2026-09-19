@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CMS Portal — Sign In &amp; Sign Up | Divine Leads Media</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M26,48 V20 H48 A28,28 0 0 1 74,36' fill='none' stroke='%230D1B2A' stroke-width='11' stroke-linecap='round'/%3E%3Cpath d='M26,52 V80 H48 A28,28 0 0 0 74,64' fill='none' stroke='%230D1B2A' stroke-width='11' stroke-linecap='round'/%3E%3Ccircle cx='43' cy='50' r='14' fill='%232563EB'/%3E%3Crect x='76' y='44' width='11' height='11' rx='3' fill='%232563EB'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    .auth-page {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+      background: radial-gradient(circle at 50% 30%, rgba(37, 99, 235, 0.12) 0%, #080D16 80%);
+    }
+    .auth-card {
+      width: 100%;
+      max-width: 460px;
+      background: var(--dlm-navy);
+      border: 1px solid var(--border-medium);
+      border-radius: var(--radius-md);
+      padding: 36px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+    }
+    .auth-tabs {
+      display: flex;
+      border-bottom: 1px solid var(--border-subtle);
+      margin-bottom: 24px;
+    }
+    .auth-tab-btn {
+      flex: 1;
+      padding: 12px;
+      background: none;
+      border: none;
+      border-bottom: 2px solid transparent;
+      color: var(--text-muted);
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .auth-tab-btn.active {
+      color: #fff;
+      border-bottom-color: var(--dlm-blue);
+    }
+  </style>
+</head>
+<body class="auth-page">
+
+  <div class="auth-card">
+    <div style="text-align:center; margin-bottom:24px;">
+      <a href="index.html" class="brand-logo" style="justify-content:center; margin-bottom:12px;">
+        <svg class="brand-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <path d="M26,48 V20 H48 A28,28 0 0 1 74,36" fill="none" stroke="#FFFFFF" stroke-width="11" stroke-linecap="round"/>
+          <path d="M26,52 V80 H48 A28,28 0 0 0 74,64" fill="none" stroke="#FFFFFF" stroke-width="11" stroke-linecap="round"/>
+          <circle cx="43" cy="50" r="14" fill="#2563EB"/>
+          <rect x="76" y="44" width="11" height="11" rx="3" fill="#2563EB"/>
+        </svg>
+        <div class="brand-text">
+          <span class="brand-title">DIVINE LEADS</span>
+          <span class="brand-subtitle">M E D I A</span>
+        </div>
+      </a>
+      <div class="badge">STAFF CMS DASHBOARD</div>
+    </div>
+
+    <div class="auth-tabs">
+      <button class="auth-tab-btn active" id="tabSignIn">Sign In</button>
+      <button class="auth-tab-btn" id="tabSignUp">Sign Up</button>
+    </div>
+
+    <!-- Sign In Form -->
+    <form id="signInForm">
+      <div class="form-group">
+        <label class="form-label">Email Address</label>
+        <input type="email" id="loginEmail" class="form-control" required placeholder="admin@divineleadsmedia.com">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Password</label>
+        <input type="password" id="loginPassword" class="form-control" required placeholder="••••••••">
+      </div>
+      <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 8px;">
+        Sign In to CMS →
+      </button>
+
+      <button type="button" id="btnFillAdmin" class="btn btn-secondary btn-sm" style="width:100%; margin-top:12px; font-family:var(--font-mono); font-size:0.75rem;">
+        ⚡ Fill Admin Login
+      </button>
+    </form>
+
+    <!-- Sign Up Form -->
+    <form id="signUpForm" style="display: none;">
+      <div class="form-group">
+        <label class="form-label">Full Name</label>
+        <input type="text" id="regFullName" class="form-control" required placeholder="e.g. Samuel Adebayo">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Email Address</label>
+        <input type="email" id="regEmail" class="form-control" required placeholder="e.g. samuel@school.edu.ng">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Create Password</label>
+        <input type="password" id="regPassword" class="form-control" required placeholder="At least 6 characters">
+      </div>
+      <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 8px;">
+        Create Account &amp; Enter CMS →
+      </button>
+    </form>
+
+    <div style="margin-top: 24px; text-align: center; border-top: 1px solid var(--border-subtle); padding-top: 18px;">
+      <a href="index.html" style="font-size: 0.85rem; color: var(--text-muted);">← Back to Website</a>
+    </div>
+  </div>
+
+  <script src="assets/js/db.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const tabSignIn = document.getElementById('tabSignIn');
+      const tabSignUp = document.getElementById('tabSignUp');
+      const signInForm = document.getElementById('signInForm');
+      const signUpForm = document.getElementById('signUpForm');
+      const btnFillAdmin = document.getElementById('btnFillAdmin');
+
+      if (window.DLM_DB && window.DLM_DB.getCurrentUser()) {
+        window.location.href = 'cms.html';
+        return;
+      }
+
+      tabSignIn.addEventListener('click', () => {
+        tabSignIn.classList.add('active');
+        tabSignUp.classList.remove('active');
+        signInForm.style.display = 'block';
+        signUpForm.style.display = 'none';
+      });
+
+      tabSignUp.addEventListener('click', () => {
+        tabSignUp.classList.add('active');
+        tabSignIn.classList.remove('active');
+        signInForm.style.display = 'none';
+        signUpForm.style.display = 'block';
+      });
+
+      btnFillAdmin.addEventListener('click', () => {
+        document.getElementById('loginEmail').value = 'admin@divineleadsmedia.com';
+        document.getElementById('loginPassword').value = 'password123';
+        window.showToast('Admin credentials filled!', 'success');
+      });
+
+      signInForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const email = document.getElementById('loginEmail').value.trim();
+        const pass = document.getElementById('loginPassword').value;
+
+        try {
+          const user = window.DLM_DB.authenticateUser(email, pass);
+          window.showToast(`Welcome, ${user.fullName}!`, 'success');
+          setTimeout(() => { window.location.href = 'cms.html'; }, 400);
+        } catch(err) {
+          alert(err.message);
+        }
+      });
+
+      signUpForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const fullName = document.getElementById('regFullName').value.trim();
+        const email = document.getElementById('regEmail').value.trim();
+        const pass = document.getElementById('regPassword').value;
+
+        if (pass.length < 6) {
+          alert('Password must be at least 6 characters long.');
+          return;
+        }
+
+        try {
+          const newUser = window.DLM_DB.registerUser({ fullName, email, password: pass });
+          window.showToast(`Account created for ${newUser.fullName}!`, 'success');
+          setTimeout(() => { window.location.href = 'cms.html'; }, 400);
+        } catch(err) {
+          alert(err.message);
+        }
+      });
+    });
+  </script>
+</body>
+</html>
