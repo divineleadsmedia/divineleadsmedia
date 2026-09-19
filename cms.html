@@ -677,14 +677,45 @@
       <div class="cms-view" id="view-backup" style="display:none;">
         <div style="background:var(--dlm-navy-surface); border:1px solid var(--border-subtle); border-radius:var(--radius-md); padding:32px; max-width:720px;">
           <div class="badge" style="margin-bottom:12px;">SITE DATA MANAGEMENT</div>
-          <h2 style="font-family:var(--font-display); font-size:1.5rem; color:#fff; margin-bottom:10px;">Export or Restore Data</h2>
-          <p style="color:var(--text-muted); font-size:0.92rem; line-height:1.6; margin-bottom:24px;">
-            Save a copy of all your articles, news, and downloads to your computer, or restore them anytime.
-          </p>
+          <!-- Live Website Sync Box -->
+          <div style="background:rgba(37,99,235,0.08); border:1px solid rgba(37,99,235,0.25); border-radius:var(--radius-sm); padding:20px; margin-bottom:28px;">
+            <div class="badge" style="margin-bottom:8px; color:var(--dlm-blue-soft);">LIVE WEBSITE SYNCHRONIZATION</div>
+            <h3 style="color:#fff; font-size:1.1rem; margin-bottom:6px;">Publish Posts to All Live Website Visitors</h3>
+            <p style="font-size:0.86rem; color:var(--text-muted); line-height:1.5; margin-bottom:14px;">
+              Posts you save in the CMS update immediately on your screen. To make them visible to <strong>every school and student browsing your live website</strong> on GitHub Pages, use one of the two options below:
+            </p>
+
+            <div style="display:flex; gap:10px; flex-wrap:wrap; margin-bottom:12px;">
+              <button class="btn btn-primary btn-sm" id="btnExportLiveContent">📥 Download Updated content.json</button>
+              <button class="btn btn-secondary btn-sm" id="btnToggleGitHubSync">⚙️ Configure 1-Click GitHub Cloud Sync</button>
+            </div>
+
+            <!-- Optional GitHub Token Box for 1-Click Publishing -->
+            <div id="githubSyncPanel" style="display:none; background:var(--dlm-navy-deep); border:1px solid var(--border-subtle); border-radius:var(--radius-sm); padding:16px; margin-top:12px;">
+              <h4 style="color:#fff; font-size:0.92rem; margin-bottom:6px;">1-Click Direct Cloud Sync (Optional)</h4>
+              <p style="font-size:0.8rem; color:var(--text-dim); margin-bottom:10px;">
+                Enter your GitHub Personal Access Token (fine-grained or classic with repo access). When configured, the CMS will automatically push live updates directly to your GitHub repository!
+              </p>
+              <div style="display:grid; grid-template-columns: 1fr 1fr; gap:10px; margin-bottom:10px;">
+                <div>
+                  <label class="form-label" style="font-size:0.75rem;">GitHub Repo (e.g. divineleadsmedia/divineleadsmedia)</label>
+                  <input type="text" id="ghRepoInput" class="form-control" placeholder="divineleadsmedia/divineleadsmedia">
+                </div>
+                <div>
+                  <label class="form-label" style="font-size:0.75rem;">GitHub Token (ghp_...)</label>
+                  <input type="password" id="ghTokenInput" class="form-control" placeholder="ghp_xxxxxxxxxxxxxx">
+                </div>
+              </div>
+              <div style="display:flex; gap:8px;">
+                <button class="btn btn-primary btn-sm" id="btnSaveGitHubSync">Save Settings</button>
+                <button class="btn btn-sm" id="btnSyncNowGitHub" style="background:var(--accent-green); color:#fff;">🚀 Push to GitHub Live Now</button>
+              </div>
+            </div>
+          </div>
 
           <div style="display:flex; gap:12px; flex-wrap:wrap;">
-            <button class="btn btn-primary" id="btnExportBackup">Export Backup File (JSON)</button>
-            <button class="btn btn-secondary" id="btnImportBackup">Restore from JSON</button>
+            <button class="btn btn-secondary btn-sm" id="btnExportBackup">Export Backup File (JSON)</button>
+            <button class="btn btn-secondary btn-sm" id="btnImportBackup">Restore from JSON</button>
             <input type="file" id="backupFileInput" accept=".json" style="display:none;">
           </div>
 

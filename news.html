@@ -273,6 +273,11 @@
       window.addEventListener('dlm_db_news_changed', () => {
         renderNews();
       });
+      window.addEventListener('storage', (e) => {
+        if (!e.key || e.key.includes('news') || e.key.includes('dlm_')) {
+          renderNews();
+        }
+      });
     });
   </script>
 </body>

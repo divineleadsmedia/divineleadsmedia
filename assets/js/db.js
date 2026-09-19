@@ -274,19 +274,90 @@ class DLMDatabase {
   }
 
   init() {
-    const VERSION_KEY = 'dlm_clean_v5';
-    if (localStorage.getItem('dlm_data_version') !== VERSION_KEY) {
+    // Only populate keys if they don't already exist in localStorage, preserving user edits!
+    if (!localStorage.getItem(DLM_STORAGE_KEYS.NEWS)) {
       localStorage.setItem(DLM_STORAGE_KEYS.NEWS, JSON.stringify(INITIAL_SEED_DATA.news));
-      localStorage.setItem(DLM_STORAGE_KEYS.ARTICLES, JSON.stringify(INITIAL_SEED_DATA.articles));
-      localStorage.setItem(DLM_STORAGE_KEYS.DOWNLOADS, JSON.stringify(INITIAL_SEED_DATA.downloads));
-      localStorage.setItem(DLM_STORAGE_KEYS.WEBINARS, JSON.stringify(INITIAL_SEED_DATA.webinars));
-      localStorage.setItem(DLM_STORAGE_KEYS.VIDEOS, JSON.stringify(INITIAL_SEED_DATA.videos));
-      localStorage.setItem(DLM_STORAGE_KEYS.USERS, JSON.stringify(INITIAL_SEED_DATA.users));
-      localStorage.setItem('dlm_data_version', VERSION_KEY);
     }
+    if (!localStorage.getItem(DLM_STORAGE_KEYS.ARTICLES)) {
+      localStorage.setItem(DLM_STORAGE_KEYS.ARTICLES, JSON.stringify(INITIAL_SEED_DATA.articles));
+    }
+    if (!localStorage.getItem(DLM_STORAGE_KEYS.DOWNLOADS)) {
+      localStorage.setItem(DLM_STORAGE_KEYS.DOWNLOADS, JSON.stringify(INITIAL_SEED_DATA.downloads));
+    }
+    if (!localStorage.getItem(DLM_STORAGE_KEYS.WEBINARS)) {
+      localStorage.setItem(DLM_STORAGE_KEYS.WEBINARS, JSON.stringify(INITIAL_SEED_DATA.webinars));
+    }
+    if (!localStorage.getItem(DLM_STORAGE_KEYS.VIDEOS)) {
+      localStorage.setItem(DLM_STORAGE_KEYS.VIDEOS, JSON.stringify(INITIAL_SEED_DATA.videos));
+    }
+    if (!localStorage.getItem(DLM_STORAGE_KEYS.USERS)) {
+      localStorage.setItem(DLM_STORAGE_KEYS.USERS, JSON.stringify(INITIAL_SEED_DATA.users));
+    }
+
+    // Automatically sync published content from assets/data/content.json if available
+    this.syncFromStaticContentFile();
+
     // If no active user session, initialize default admin user
     if (!localStorage.getItem(DLM_STORAGE_KEYS.AUTH_USER) && !sessionStorage.getItem(DLM_STORAGE_KEYS.AUTH_USER)) {
       this.setCurrentUser(INITIAL_SEED_DATA.users[0]);
+    }
+  }
+
+  async syncFromStaticContentFile() {
+    try {
+      const response = await fetch('assets/data/content.json', { cache: 'no-cache' });
+      if (response.ok) {
+        const json = await response.json();
+        if (json.news && Array.isArray(json.news)) {
+          const localNews = this.getNews();
+          let changed = false;
+          json.news.forEach(remoteItem => {
+            const idx = localNews.findIndex(n => n.id === remoteItem.id);
+            if (idx === -1) {
+              localNews.unshift(remoteItem);
+              changed = true;
+            }
+          });
+          if (changed) {
+            localStorage.setItem(DLM_STORAGE_KEYS.NEWS, JSON.stringify(localNews));
+            this.notify('news_changed', localNews);
+          }
+        }
+
+        if (json.articles && Array.isArray(json.articles)) {
+          const localArticles = this.getArticles();
+          let artChanged = false;
+          json.articles.forEach(remoteItem => {
+            const idx = localArticles.findIndex(a => a.id === remoteItem.id);
+            if (idx === -1) {
+              localArticles.unshift(remoteItem);
+              artChanged = true;
+            }
+          });
+          if (artChanged) {
+            localStorage.setItem(DLM_STORAGE_KEYS.ARTICLES, JSON.stringify(localArticles));
+            this.notify('articles_changed', localArticles);
+          }
+        }
+
+        if (json.downloads && Array.isArray(json.downloads)) {
+          const localDownloads = this.getDownloads();
+          let dlChanged = false;
+          json.downloads.forEach(remoteItem => {
+            const idx = localDownloads.findIndex(d => d.id === remoteItem.id);
+            if (idx === -1) {
+              localDownloads.unshift(remoteItem);
+              dlChanged = true;
+            }
+          });
+          if (dlChanged) {
+            localStorage.setItem(DLM_STORAGE_KEYS.DOWNLOADS, JSON.stringify(localDownloads));
+            this.notify('downloads_changed', localDownloads);
+          }
+        }
+      }
+    } catch (err) {
+      // Offline fallback
     }
   }
 
@@ -561,13 +632,12 @@ class DLMDatabase {
 
   notify(event, payload) {
     window.dispatchEvent(new CustomEvent('dlm_db_' + event, { detail: payload }));
+    try {
+      localStorage.setItem('dlm_last_sync_timestamp', Date.now().toString());
+    } catch (e) {}
   }
 }
 
 // Global instance
 window.DLM_DB = new DLMDatabase();
-// Sync updated defaults to localStorage so clean content displays immediately
-if (localStorage.getItem('dlm_clean_v2') !== 'true') {
-  window.DLM_DB.resetToDefaults();
-  localStorage.setItem('dlm_clean_v2', 'true');
-}
+

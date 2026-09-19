@@ -1177,6 +1177,120 @@ function setupWebinarForm() {
 
 // ==================== BACKUP & RESTORE ====================
 function setupBackupHandlers() {
+  // 1. Export Live Website content.json
+  document.getElementById('btnExportLiveContent')?.addEventListener('click', () => {
+    const data = {
+      news: window.DLM_DB.getNews(),
+      articles: window.DLM_DB.getArticles(),
+      downloads: window.DLM_DB.getDownloads(),
+      webinars: window.DLM_DB.getWebinars()
+    };
+    const jsonStr = JSON.stringify(data, null, 2);
+    const blob = new Blob([jsonStr], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'content.json';
+    a.click();
+    URL.revokeObjectURL(url);
+    window.showToast('Downloaded content.json! Replace assets/data/content.json & push to GitHub for all visitors to see.', 'success');
+  });
+
+  // 2. Toggle GitHub Sync Configuration Panel
+  const panel = document.getElementById('githubSyncPanel');
+  const repoInput = document.getElementById('ghRepoInput');
+  const tokenInput = document.getElementById('ghTokenInput');
+
+  if (repoInput) repoInput.value = localStorage.getItem('dlm_gh_repo') || 'divineleadsmedia/divineleadsmedia';
+  if (tokenInput) tokenInput.value = localStorage.getItem('dlm_gh_token') || '';
+
+  document.getElementById('btnToggleGitHubSync')?.addEventListener('click', () => {
+    if (panel) panel.style.display = panel.style.display === 'none' ? 'block' : 'none';
+  });
+
+  document.getElementById('btnSaveGitHubSync')?.addEventListener('click', () => {
+    const repo = (repoInput?.value || '').trim();
+    const token = (tokenInput?.value || '').trim();
+    localStorage.setItem('dlm_gh_repo', repo);
+    localStorage.setItem('dlm_gh_token', token);
+    window.showToast('GitHub cloud sync configuration saved!', 'success');
+  });
+
+  // 3. One-Click Push to GitHub via API
+  document.getElementById('btnSyncNowGitHub')?.addEventListener('click', async () => {
+    const repo = (repoInput?.value || '').trim() || localStorage.getItem('dlm_gh_repo');
+    const token = (tokenInput?.value || '').trim() || localStorage.getItem('dlm_gh_token');
+
+    if (!repo || !token) {
+      alert('Please enter your GitHub Repository (e.g. divineleadsmedia/divineleadsmedia) and Personal Access Token.');
+      if (panel) panel.style.display = 'block';
+      return;
+    }
+
+    const btn = document.getElementById('btnSyncNowGitHub');
+    const originalText = btn.textContent;
+    btn.textContent = 'Pushing to GitHub...';
+    btn.disabled = true;
+
+    try {
+      const data = {
+        news: window.DLM_DB.getNews(),
+        articles: window.DLM_DB.getArticles(),
+        downloads: window.DLM_DB.getDownloads(),
+        webinars: window.DLM_DB.getWebinars()
+      };
+      const jsonStr = JSON.stringify(data, null, 2);
+
+      // Check current file SHA from GitHub
+      const fileUrl = `https://api.github.com/repos/${repo}/contents/assets/data/content.json`;
+      let sha = null;
+      try {
+        const getRes = await fetch(fileUrl, {
+          headers: {
+            'Authorization': `Bearer ${token}`,
+            'Accept': 'application/vnd.github.v3+json'
+          }
+        });
+        if (getRes.ok) {
+          const fileData = await getRes.json();
+          sha = fileData.sha;
+        }
+      } catch (e) {}
+
+      // Base64 encode safely with UTF-8 support
+      const base64Content = btoa(unescape(encodeURIComponent(jsonStr)));
+      const payload = {
+        message: 'chore(cms): update live website posts via CMS studio',
+        content: base64Content,
+        branch: 'main'
+      };
+      if (sha) payload.sha = sha;
+
+      const putRes = await fetch(fileUrl, {
+        method: 'PUT',
+        headers: {
+          'Authorization': `Bearer ${token}`,
+          'Accept': 'application/vnd.github.v3+json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(payload)
+      });
+
+      if (!putRes.ok) {
+        const errJson = await putRes.json().catch(() => ({}));
+        throw new Error(errJson.message || `HTTP ${putRes.status}`);
+      }
+
+      window.showToast('🚀 Successfully pushed to GitHub! Live website updating in ~30s.', 'success');
+    } catch (err) {
+      alert('Failed to push to GitHub: ' + err.message + '\n\nTip: Make sure your token has "repo" permissions and the repository name is correct.');
+    } finally {
+      btn.textContent = originalText;
+      btn.disabled = false;
+    }
+  });
+
+  // 4. Standard Backup & Restore
   document.getElementById('btnExportBackup')?.addEventListener('click', () => {
     const jsonStr = window.DLM_DB.exportBackupJSON();
     const blob = new Blob([jsonStr], { type: 'application/json' });

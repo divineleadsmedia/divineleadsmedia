@@ -241,6 +241,11 @@
       window.addEventListener('dlm_db_downloads_changed', () => {
         renderDownloads();
       });
+      window.addEventListener('storage', (e) => {
+        if (!e.key || e.key.includes('downloads') || e.key.includes('dlm_')) {
+          renderDownloads();
+        }
+      });
     });
   </script>
 </body>

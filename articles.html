@@ -326,6 +326,11 @@
       window.addEventListener('dlm_db_articles_changed', () => {
         renderArticles();
       });
+      window.addEventListener('storage', (e) => {
+        if (!e.key || e.key.includes('articles') || e.key.includes('dlm_')) {
+          renderArticles();
+        }
+      });
     });
   </script>
 </body>
