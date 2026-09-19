@@ -174,13 +174,19 @@
         container.innerHTML = downloads.map(item => `
           <div class="release-item">
             <div>
-              <div style="display:flex; gap:8px; margin-bottom:10px; flex-wrap:wrap;">
+              <div style="display:flex; gap:8px; margin-bottom:10px; flex-wrap:wrap; align-items:center;">
                 <span class="version-badge font-mono">${item.version}</span>
                 <span class="badge" style="font-size:0.72rem;">${item.platform}</span>
                 <span class="badge" style="font-size:0.72rem; color:var(--accent-green); border-color:rgba(16,185,129,0.3);">${item.tag}</span>
+                <span class="badge" style="font-size:0.7rem; color:var(--dlm-blue-soft); border-color:var(--border-blue);">Offline Certified</span>
+                ${item.youtubeUrl ? `<a href="release.html?id=${encodeURIComponent(item.id)}#releaseVideoSection" class="badge" style="font-size:0.7rem; color:#EF4444; border-color:rgba(239,68,68,0.35); text-decoration:none; display:inline-flex; align-items:center; gap:4px;" title="Watch Installation Video Guide">▶ Video Guide</a>` : ''}
               </div>
 
-              <h3 style="font-family:var(--font-display); font-size:1.4rem; color:#fff; margin-bottom:8px;">${item.name}</h3>
+              <h3 style="font-family:var(--font-display); font-size:1.4rem; color:#fff; margin-bottom:8px;">
+                <a href="release.html?id=${encodeURIComponent(item.id)}" style="color:#fff; text-decoration:none;" onmouseover="this.style.color='var(--dlm-blue-soft)'" onmouseout="this.style.color='#fff'">
+                  ${item.name}
+                </a>
+              </h3>
               <p style="color:var(--text-muted); font-size:0.92rem; margin-bottom:14px; max-width:760px;">${item.description}</p>
 
               ${item.features && item.features.length > 0 ? `
@@ -196,12 +202,15 @@
               </div>
             </div>
 
-            <div style="display:flex; flex-direction:column; gap:10px; align-items:flex-end;">
-              <button class="btn btn-primary" onclick="triggerDownload('${(item.downloadUrl || '').replace(/'/g, "\\'")}', '${item.name.replace(/'/g, "\\'")}')">
-                Download Now ↓
+            <div style="display:flex; flex-direction:column; gap:10px; align-items:stretch; min-width:210px;">
+              <a href="release.html?id=${encodeURIComponent(item.id)}" class="btn btn-primary" style="justify-content:center; text-align:center;">
+                View Release &amp; Specs →
+              </a>
+              <button class="btn btn-secondary btn-sm" onclick="triggerDownload('${(item.downloadUrl || '').replace(/'/g, "\\'")}', '${item.name.replace(/'/g, "\\'")}')" style="justify-content:center;">
+                Direct Download ↓
               </button>
-              <a href="contact.html?interest=${encodeURIComponent(item.name)}" class="btn btn-secondary btn-sm">
-                Request Setup Help
+              <a href="contact.html?interest=${encodeURIComponent(item.name)}" style="font-size:0.75rem; color:var(--dlm-blue-soft); text-align:center; padding:2px 0;">
+                Need School Setup?
               </a>
             </div>
           </div>

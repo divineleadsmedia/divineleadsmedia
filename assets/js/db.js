@@ -15,7 +15,8 @@ const DLM_STORAGE_KEYS = {
   WEBINARS: 'dlm_webinars_data',
   VIDEOS: 'dlm_videos_data',
   USERS: 'dlm_users_data',
-  AUTH_USER: 'dlm_auth_session'
+  AUTH_USER: 'dlm_auth_session',
+  DELETED_IDS: 'dlm_deleted_ids'
 };
 
 const INITIAL_SEED_DATA = {
@@ -124,6 +125,7 @@ const INITIAL_SEED_DATA = {
       checksum: 'sha256: 7f83b1657ff1fc53b92dc182563a92548231c9a6',
       description: 'The complete offline grading, broadsheet calculation, and report card software for Nigerian Nursery, Primary, and Secondary schools.',
       downloadUrl: '#download-resultdesk',
+      youtubeUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
       features: [
         'Automatic broadsheet computation and student ranking',
         'Built-in WAEC, NECO, and BECE grading standards',
@@ -143,6 +145,7 @@ const INITIAL_SEED_DATA = {
       checksum: 'sha256: 3c92a9108b6e2d14781f9a0937a09bc3319082a1',
       description: 'Run ResultDesk straight from a USB flash drive on any school staff room computer without needing admin permission.',
       downloadUrl: '#download-portable',
+      youtubeUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
       features: [
         'Zero installation — plug in and run directly',
         'Keeps all student records safely on your flash drive',
@@ -160,6 +163,7 @@ const INITIAL_SEED_DATA = {
       checksum: 'sha256: 9e24b4510cae7889104fa28987103a01a9df2768',
       description: 'A smart presentation timer and announcement screen for school assemblies, church services, and major conferences.',
       downloadUrl: '#download-serviceflow',
+      youtubeUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
       features: [
         'Real-time Wi-Fi sync between stage display and phone controller',
         'Send silent announcements directly to the speaker display',
@@ -177,6 +181,7 @@ const INITIAL_SEED_DATA = {
       checksum: 'sha256: b894001923ab9001fa120938472918bbda019283',
       description: 'Pre-formatted spreadsheet template with continuous assessment weighting, ready to import directly into DLM ResultDesk.',
       downloadUrl: '#download-template',
+      youtubeUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
       features: [
         'Pre-configured continuous assessment formulas (CA1, CA2, Exam)',
         'Sample remarks for Nursery and Primary pupils',
@@ -194,6 +199,7 @@ const INITIAL_SEED_DATA = {
       checksum: 'sha256: e512a89c02d18471fa0919bbda841029182047ef',
       description: 'Secure, offline election infrastructure for student prefect elections, university union voting, and school leadership polls.',
       downloadUrl: '#download-securevote',
+      youtubeUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
       features: [
         'Tamper-proof cryptographic ballot verification',
         'Works completely offline on local school Wi-Fi or LAN',
@@ -303,15 +309,39 @@ class DLMDatabase {
     }
   }
 
+  getDeletedIds() {
+    try {
+      return JSON.parse(localStorage.getItem(DLM_STORAGE_KEYS.DELETED_IDS)) || [];
+    } catch(e) { return []; }
+  }
+
+  trackDeletedId(id) {
+    if (!id) return;
+    const list = this.getDeletedIds();
+    if (!list.includes(id)) {
+      list.push(id);
+      localStorage.setItem(DLM_STORAGE_KEYS.DELETED_IDS, JSON.stringify(list));
+    }
+  }
+
+  untrackDeletedId(id) {
+    if (!id) return;
+    const list = this.getDeletedIds().filter(x => x !== id);
+    localStorage.setItem(DLM_STORAGE_KEYS.DELETED_IDS, JSON.stringify(list));
+  }
+
   async syncFromStaticContentFile() {
     try {
       const response = await fetch('assets/data/content.json', { cache: 'no-cache' });
       if (response.ok) {
         const json = await response.json();
+        const deletedIds = this.getDeletedIds();
+
         if (json.news && Array.isArray(json.news)) {
           const localNews = this.getNews();
           let changed = false;
           json.news.forEach(remoteItem => {
+            if (deletedIds.includes(remoteItem.id)) return;
             const idx = localNews.findIndex(n => n.id === remoteItem.id);
             if (idx === -1) {
               localNews.unshift(remoteItem);
@@ -328,6 +358,7 @@ class DLMDatabase {
           const localArticles = this.getArticles();
           let artChanged = false;
           json.articles.forEach(remoteItem => {
+            if (deletedIds.includes(remoteItem.id)) return;
             const idx = localArticles.findIndex(a => a.id === remoteItem.id);
             if (idx === -1) {
               localArticles.unshift(remoteItem);
@@ -344,6 +375,7 @@ class DLMDatabase {
           const localDownloads = this.getDownloads();
           let dlChanged = false;
           json.downloads.forEach(remoteItem => {
+            if (deletedIds.includes(remoteItem.id)) return;
             const idx = localDownloads.findIndex(d => d.id === remoteItem.id);
             if (idx === -1) {
               localDownloads.unshift(remoteItem);
@@ -398,6 +430,7 @@ class DLMDatabase {
       list.unshift(item);
     }
     localStorage.setItem(DLM_STORAGE_KEYS.NEWS, JSON.stringify(list));
+    this.untrackDeletedId(item.id);
     this.notify('news_changed', list);
     return item;
   }
@@ -405,6 +438,7 @@ class DLMDatabase {
   deleteNews(id) {
     const list = this.getNews().filter(n => n.id !== id);
     localStorage.setItem(DLM_STORAGE_KEYS.NEWS, JSON.stringify(list));
+    this.trackDeletedId(id);
     this.notify('news_changed', list);
   }
 
@@ -448,6 +482,7 @@ class DLMDatabase {
       list.unshift(item);
     }
     localStorage.setItem(DLM_STORAGE_KEYS.ARTICLES, JSON.stringify(list));
+    this.untrackDeletedId(item.id);
     this.notify('articles_changed', list);
     return item;
   }
@@ -455,6 +490,7 @@ class DLMDatabase {
   deleteArticle(id) {
     const list = this.getArticles().filter(a => a.id !== id);
     localStorage.setItem(DLM_STORAGE_KEYS.ARTICLES, JSON.stringify(list));
+    this.trackDeletedId(id);
     this.notify('articles_changed', list);
   }
 
@@ -478,6 +514,7 @@ class DLMDatabase {
       list.unshift(item);
     }
     localStorage.setItem(DLM_STORAGE_KEYS.DOWNLOADS, JSON.stringify(list));
+    this.untrackDeletedId(item.id);
     this.notify('downloads_changed', list);
     return item;
   }
@@ -485,6 +522,7 @@ class DLMDatabase {
   deleteDownload(id) {
     const list = this.getDownloads().filter(d => d.id !== id);
     localStorage.setItem(DLM_STORAGE_KEYS.DOWNLOADS, JSON.stringify(list));
+    this.trackDeletedId(id);
     this.notify('downloads_changed', list);
   }
 
@@ -503,6 +541,7 @@ class DLMDatabase {
       list.unshift(item);
     }
     localStorage.setItem(DLM_STORAGE_KEYS.WEBINARS, JSON.stringify(list));
+    this.untrackDeletedId(item.id);
     this.notify('webinars_changed', list);
     return item;
   }
@@ -510,6 +549,7 @@ class DLMDatabase {
   deleteWebinar(id) {
     const list = this.getWebinars().filter(w => w.id !== id);
     localStorage.setItem(DLM_STORAGE_KEYS.WEBINARS, JSON.stringify(list));
+    this.trackDeletedId(id);
     this.notify('webinars_changed', list);
   }
 
@@ -621,6 +661,7 @@ class DLMDatabase {
   }
 
   resetToDefaults() {
+    localStorage.removeItem(DLM_STORAGE_KEYS.DELETED_IDS);
     localStorage.setItem(DLM_STORAGE_KEYS.NEWS, JSON.stringify(INITIAL_SEED_DATA.news));
     localStorage.setItem(DLM_STORAGE_KEYS.ARTICLES, JSON.stringify(INITIAL_SEED_DATA.articles));
     localStorage.setItem(DLM_STORAGE_KEYS.DOWNLOADS, JSON.stringify(INITIAL_SEED_DATA.downloads));

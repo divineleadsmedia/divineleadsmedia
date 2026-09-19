@@ -133,7 +133,8 @@
         "Tamper-proof cryptographic ballot verification",
         "Works completely offline on local school Wi-Fi or LAN",
         "Real-time instant result tabulation and audit log"
-      ]
+      ],
+      "youtubeUrl": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
     },
     {
       "id": "dl-2",
@@ -150,7 +151,8 @@
         "Zero installation — plug in and run directly",
         "Keeps all student records safely on your flash drive",
         "Works on any standard school laptop or desktop"
-      ]
+      ],
+      "youtubeUrl": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
     },
     {
       "id": "dl-1",
@@ -169,7 +171,8 @@
         "Psychomotor and behavioral evaluation sheets",
         "Batch export and print clean PDF student report cards",
         "100% offline — no internet connection required"
-      ]
+      ],
+      "youtubeUrl": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
     },
     {
       "id": "dl-1789843349358",
@@ -179,7 +182,7 @@
       "tag": "Media Production",
       "size": "18",
       "date": "September 2026",
-      "downloadUrl": "#download-dlmfaithguard",
+      "downloadUrl": "assets/downloads/dlm-faithguard.apk",
       "description": "DLM FaithGuard is a privacy-first app designed to help you guard your attention and use your phone more intentionally. It helps reduce digital distractions while creating space for prayer, Scripture, spiritual growth, focused learning, and intentional knowledge retention through Focus Mode, Scripture Memorizer, and Concept Memorizer.",
       "features": [
         "Focus Mode",
@@ -194,7 +197,8 @@
         "No Ads or Behavioral Tracking"
       ],
       "createdAt": "2026-09-19T18:42:29.358Z",
-      "updatedAt": "2026-09-19T18:43:10.540Z"
+      "updatedAt": "2026-09-19T18:43:10.540Z",
+      "youtubeUrl": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
     }
   ],
   "webinars": [

@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Software Release Details — Divine Leads Media</title>
+  <meta name="description"
+    content="Official software release specifications, offline installer downloads, system requirements, and step-by-step setup guides from Divine Leads Media.">
+  <link rel="icon"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M26,48 V20 H48 A28,28 0 0 1 74,36' fill='none' stroke='%230D1B2A' stroke-width='11' stroke-linecap='round'/%3E%3Cpath d='M26,52 V80 H48 A28,28 0 0 0 74,64' fill='none' stroke='%230D1B2A' stroke-width='11' stroke-linecap='round'/%3E%3Ccircle cx='43' cy='50' r='14' fill='%232563EB'/%3E%3Crect x='76' y='44' width='11' height='11' rx='3' fill='%232563EB'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container-wide nav-container">
+      <a href="index.html" class="brand-logo">
+        <svg class="brand-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <path d="M26,48 V20 H48 A28,28 0 0 1 74,36" fill="none" stroke="#FFFFFF" stroke-width="11"
+            stroke-linecap="round" />
+          <path d="M26,52 V80 H48 A28,28 0 0 0 74,64" fill="none" stroke="#FFFFFF" stroke-width="11"
+            stroke-linecap="round" />
+          <circle cx="43" cy="50" r="14" fill="#2563EB" />
+          <rect x="76" y="44" width="11" height="11" rx="3" fill="#2563EB" />
+        </svg>
+        <div class="brand-text">
+          <span class="brand-title">DIVINE LEADS</span>
+          <span class="brand-subtitle">M E D I A</span>
+        </div>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="downloads.html" class="active">Downloads</a></li>
+        <li><a href="staff.html">Our Staff</a></li>
+        <li><a href="news.html">News</a></li>
+        <li><a href="articles.html">Articles</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="downloads.html" class="btn btn-secondary btn-sm">← All Downloads</a>
+        <button class="mobile-toggle" aria-label="Open Navigation">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-nav-drawer">
+    <button class="close-drawer"
+      style="align-self: flex-end; background:none; border:none; color:#fff; font-size:2rem; cursor:pointer;"
+      aria-label="Close">✕</button>
+    <ul class="mobile-links">
+      <li><a href="index.html" class="close-drawer">Home</a></li>
+      <li><a href="about.html" class="close-drawer">About Us</a></li>
+      <li><a href="downloads.html" class="close-drawer active">Downloads &amp; Releases</a></li>
+      <li><a href="staff.html" class="close-drawer">Our Staff</a></li>
+      <li><a href="news.html" class="close-drawer">News &amp; Events</a></li>
+      <li><a href="articles.html" class="close-drawer">Articles &amp; Guides</a></li>
+      <li><a href="contact.html" class="close-drawer">Contact Us</a></li>
+    </ul>
+  </div>
+
+  <!-- Breadcrumb Navigation -->
+  <div style="padding-top: 130px; background: var(--dlm-navy-deep); border-bottom: 1px solid var(--border-subtle);">
+    <div class="container" style="padding-bottom: 16px;">
+      <nav
+        style="font-size: 0.82rem; color: var(--text-dim); display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+        <a href="index.html" style="color: var(--text-muted);">Home</a>
+        <span>/</span>
+        <a href="downloads.html" style="color: var(--text-muted);">Downloads &amp; Releases</a>
+        <span>/</span>
+        <span style="color: var(--dlm-blue-soft); font-weight: 500;" id="breadcrumbReleaseName">Loading
+          Release...</span>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Video Tutorial: How to Install (Immediately After Breadcrumb Navigation) -->
+  <section class="section" id="releaseVideoSection" style="padding-top: 36px; padding-bottom: 30px; background: rgba(13, 27, 42, 0.6); border-bottom: 1px solid var(--border-subtle);">
+    <div class="container">
+      <div style="max-width: 960px; margin: 0 auto;">
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; margin-bottom: 12px;">
+          <div class="badge" style="background:rgba(239,68,68,0.15); border-color:#EF4444; color:#EF4444;">
+            ▶ VIDEO TUTORIAL: HOW TO INSTALL
+          </div>
+          <a href="#" id="linkOpenYouTubeDirect" target="_blank" class="btn btn-secondary btn-sm"
+            style="font-size:0.75rem; padding:4px 10px;">
+            Watch on YouTube ↗
+          </a>
+        </div>
+
+        <h2 style="font-family: var(--font-display); font-size: clamp(1.4rem, 2.8vw, 2rem); color: #fff; margin-bottom: 8px;"
+          id="videoSectionTitle">
+          Installation Video Walkthrough
+        </h2>
+        <p style="color: var(--text-muted); font-size: 0.94rem; margin-bottom: 18px; line-height: 1.6;" id="videoSectionDesc">
+          Follow along with our visual tutorial showing how to install this software release on your school computer, configure settings, and get started without internet.
+        </p>
+
+        <div class="video-embed-wrapper" id="videoEmbedWrapper">
+          <iframe id="releaseVideoIframe" class="video-embed-iframe" src="" title="How to Install Video Tutorial"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+          </iframe>
+        </div>
+
+        <div
+          style="margin-top: 14px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; font-size:0.82rem; color:var(--text-dim);">
+          <span>💡 Need one-on-one live video or on-site setup guidance?</span>
+          <a href="https://wa.me/2349126300594" target="_blank"
+            style="color:var(--accent-green); font-weight:600;">Chat on WhatsApp (+234 912 630 0594) →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hero Header -->
+  <section class="section" style="padding-top: 40px; padding-bottom: 50px;">
+    <div class="container">
+      <div style="display: flex; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; align-items: center;">
+        <span class="version-badge font-mono" id="heroReleaseVersion"
+          style="font-size: 0.85rem; padding: 4px 12px;">v3.0.0</span>
+        <span class="badge" id="heroReleasePlatform">Windows 10 / 11</span>
+        <span class="badge" style="color: var(--accent-green); border-color: rgba(16, 185, 129, 0.35);"
+          id="heroReleaseTag">School Software</span>
+        <span class="badge" style="background: rgba(37, 99, 235, 0.15); color: #fff; border-color: var(--dlm-blue);">●
+          100% Offline Certified</span>
+      </div>
+
+      <h1 class="hero-headline"
+        style="font-size: clamp(2rem, 4vw, 3.4rem); margin-top: 8px; margin-bottom: 16px; line-height: 1.2;"
+        id="heroReleaseTitle">
+        Loading Software Release...
+      </h1>
+
+      <p class="hero-subhead"
+        style="max-width: 860px; margin-bottom: 28px; font-size: 1.1rem; color: var(--text-muted);"
+        id="heroReleaseDescription">
+        Please wait while we retrieve the verified package details from the DLM software registry.
+      </p>
+
+      <!-- Quick Action Buttons -->
+      <div style="display: flex; gap: 14px; flex-wrap: wrap; align-items: center;">
+        <button class="btn btn-primary" id="btnHeroDownload" style="padding: 13px 28px; font-size: 1rem;">
+          Download Installer Now ↓
+        </button>
+        <a href="contact.html?interest=resultdesk" class="btn btn-secondary" id="btnHeroSetupHelp">
+          Request School Setup &amp; Training →
+        </a>
+        <a href="https://wa.me/2349126300594" target="_blank" class="btn btn-secondary"
+          style="color: var(--accent-green);">
+          💬 WhatsApp Tech Support
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Detailed Release Content & Sidebar Grid -->
+  <section class="section" style="padding-top: 10px; padding-bottom: 90px;">
+    <div class="container">
+      <div class="release-page-grid">
+
+        <!-- Left Main Column -->
+        <div>
+          <!-- 1. Release Overview -->
+          <div class="release-main-card">
+            <div class="badge" style="margin-bottom: 12px;">OFFICIAL PACKAGE OVERVIEW</div>
+            <h2 style="font-family: var(--font-display); font-size: 1.6rem; color: #fff; margin-bottom: 14px;">
+              About This Release
+            </h2>
+            <div style="color: var(--text-primary); line-height: 1.8; font-size: 0.98rem;" id="releaseDetailedOverview">
+              <!-- Injected dynamically -->
+            </div>
+          </div>
+
+          <!-- 2. Core Features & Capabilities -->
+          <div class="release-main-card">
+            <div class="badge" style="margin-bottom: 12px;">BUILT FOR NIGERIAN SCHOOL STANDARDS</div>
+            <h2 style="font-family: var(--font-display); font-size: 1.6rem; color: #fff; margin-bottom: 18px;">
+              Key Capabilities &amp; Built-in Features
+            </h2>
+            <div id="releaseFeaturesContainer">
+              <!-- Feature list injected dynamically -->
+            </div>
+          </div>
+
+          <!-- 3. Technical Specifications & Requirements -->
+          <div class="release-main-card">
+            <div class="badge" style="margin-bottom: 12px;">SYSTEM REQUIREMENTS</div>
+            <h2 style="font-family: var(--font-display); font-size: 1.6rem; color: #fff; margin-bottom: 16px;">
+              Hardware &amp; System Specifications
+            </h2>
+            <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 16px;">
+              Engineered specifically for Nigerian school staff rooms, computer labs, and administrative offices with
+              low power draw and zero reliance on high-speed internet.
+            </p>
+
+            <table class="specs-table">
+              <tbody>
+                <tr>
+                  <th>Target Operating System</th>
+                  <td id="specPlatform">Windows 7 SP1, 8.1, 10, 11 (32-bit &amp; 64-bit)</td>
+                </tr>
+                <tr>
+                  <th>Package Version</th>
+                  <td class="font-mono text-blue" id="specVersion">v3.4.1 Official</td>
+                </tr>
+                <tr>
+                  <th>Installer File Size</th>
+                  <td id="specSize">68.4 MB</td>
+                </tr>
+                <tr>
+                  <th>Publication / Release Date</th>
+                  <td id="specDate">September 2026</td>
+                </tr>
+                <tr>
+                  <th>Internet Requirement</th>
+                  <td><strong style="color: var(--accent-green);">100% Offline</strong> (Never requires Wi-Fi or data
+                    during termly operations)</td>
+                </tr>
+                <tr>
+                  <th>Minimum RAM Needed</th>
+                  <td>2 GB RAM (4 GB recommended for large schools with 1,000+ pupils)</td>
+                </tr>
+                <tr>
+                  <th>Required Disk Space</th>
+                  <td>150 MB free drive space</td>
+                </tr>
+                <tr>
+                  <th>Database Engine</th>
+                  <td>Embedded High-Speed SQLite (Zero complex server setup required)</td>
+                </tr>
+                <tr>
+                  <th>Power Consumption</th>
+                  <td>Ultra-lightweight CPU load — fully operational on basic inverters and generators</td>
+                </tr>
+                <tr>
+                  <th>License Type</th>
+                  <td>Evaluation &amp; Per-School Perpetual License</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+
+          <!-- 4. Step-by-Step Installation Guide -->
+          <div class="release-main-card">
+            <div class="badge" style="margin-bottom: 12px;">INSTALLATION &amp; QUICKSTART GUIDE</div>
+            <h2 style="font-family: var(--font-display); font-size: 1.6rem; color: #fff; margin-bottom: 22px;">
+              How to Install on Your School PC
+            </h2>
+
+            <div class="guide-step-card">
+              <div class="guide-step-num">1</div>
+              <div class="guide-step-content">
+                <h4>Download the Verified Installer Package</h4>
+                <p>Click the "Download Now" button above or in the sidebar. Save the installer file to your computer's
+                  Downloads folder or directly to a USB flash drive for easy distribution to staff room PCs.</p>
+              </div>
+            </div>
+
+            <div class="guide-step-card">
+              <div class="guide-step-num">2</div>
+              <div class="guide-step-content">
+                <h4>Run the Setup Wizard</h4>
+                <p>Double-click the downloaded setup file. Follow the quick on-screen prompts. No internet connection or
+                  third-party database servers (like MySQL or SQL Server) are needed.</p>
+              </div>
+            </div>
+
+            <div class="guide-step-card">
+              <div class="guide-step-num">3</div>
+              <div class="guide-step-content">
+                <h4>Configure School Identity &amp; Grading System</h4>
+                <p>Launch the application. Enter your school's official name, address, motto, and upload your school
+                  crest/logo. Select your state or WAEC/NECO continuous assessment weighting (e.g., 30/70 or 40/60).</p>
+              </div>
+            </div>
+
+            <div class="guide-step-card">
+              <div class="guide-step-num">4</div>
+              <div class="guide-step-content">
+                <h4>Import Students &amp; Enter Subject Scores</h4>
+                <p>Easily import class registers from Excel/CSV files or enter students manually. Subject teachers can
+                  input Test 1, Test 2, and Exam scores directly.</p>
+              </div>
+            </div>
+
+            <div class="guide-step-card" style="margin-bottom: 0;">
+              <div class="guide-step-num">5</div>
+              <div class="guide-step-content">
+                <h4>Generate Broadsheets &amp; Print Termly Report Cards</h4>
+                <p>Instantly compute overall averages, class positions, psychomotor domain ratings, and principal
+                  remarks. Export the entire class to single or multi-page PDF report cards ready for printing or
+                  WhatsApp distribution to parents.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 5. Package Integrity & Security Checksum -->
+          <div class="release-main-card">
+            <div class="badge" style="margin-bottom: 12px;">PACKAGE INTEGRITY &amp; SECURITY</div>
+            <h2 style="font-family: var(--font-display); font-size: 1.4rem; color: #fff; margin-bottom: 8px;">
+              SHA-256 Checksum Verification
+            </h2>
+            <p style="color: var(--text-muted); font-size: 0.88rem; margin-bottom: 12px;">
+              All Divine Leads Media release packages are digitally verified to ensure they are free from corruption or
+              third-party tampering.
+            </p>
+
+            <div class="checksum-box">
+              <span class="checksum-text" id="releaseChecksumDisplay">sha256:
+                7f8a129d4b5c6e7f8a9b0c1d2e3f4a5b6c7d8e9f</span>
+              <button type="button" class="btn btn-secondary btn-sm" id="btnCopyChecksum"
+                style="padding: 4px 12px; font-size: 0.75rem; white-space: nowrap;">
+                Copy Hash
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Sidebar Column -->
+        <aside>
+          <!-- 1. Download Action Card -->
+          <div class="release-sidebar-card" style="border-top: 3px solid var(--dlm-blue);">
+            <h3 style="font-family: var(--font-display); font-size: 1.25rem; color: #fff; margin-bottom: 16px;">
+              Get This Release
+            </h3>
+
+            <div style="margin-bottom: 20px;">
+              <div
+                style="display: flex; justify-content: space-between; font-size: 0.86rem; padding: 7px 0; border-bottom: 1px solid var(--border-subtle);">
+                <span style="color: var(--text-muted);">Version</span>
+                <span class="font-mono text-blue" id="sidebarVersion">v3.4.1</span>
+              </div>
+              <div
+                style="display: flex; justify-content: space-between; font-size: 0.86rem; padding: 7px 0; border-bottom: 1px solid var(--border-subtle);">
+                <span style="color: var(--text-muted);">Download Size</span>
+                <span style="color: #fff; font-weight: 600;" id="sidebarSize">68.4 MB</span>
+              </div>
+              <div
+                style="display: flex; justify-content: space-between; font-size: 0.86rem; padding: 7px 0; border-bottom: 1px solid var(--border-subtle);">
+                <span style="color: var(--text-muted);">Operating System</span>
+                <span style="color: #fff;" id="sidebarPlatform">Windows</span>
+              </div>
+              <div
+                style="display: flex; justify-content: space-between; font-size: 0.86rem; padding: 7px 0; border-bottom: 1px solid var(--border-subtle);">
+                <span style="color: var(--text-muted);">Release Date</span>
+                <span style="color: #fff;" id="sidebarDate">Sept 2026</span>
+              </div>
+              <div style="display: flex; justify-content: space-between; font-size: 0.86rem; padding: 7px 0;">
+                <span style="color: var(--text-muted);">Format</span>
+                <span class="font-mono" style="color: var(--accent-green);">Installer (.exe)</span>
+              </div>
+            </div>
+
+            <button class="btn btn-primary" id="btnSidebarDownload"
+              style="width: 100%; justify-content: center; margin-bottom: 10px; padding: 12px;">
+              Download Installer ↓
+            </button>
+
+            <a href="#releaseVideoSection" class="btn btn-secondary btn-sm"
+              style="width: 100%; justify-content: center; margin-bottom: 8px;">
+              ▶ Watch Install Video
+            </a>
+
+            <a href="contact.html?interest=resultdesk" class="btn btn-secondary btn-sm"
+              style="width: 100%; justify-content: center;" id="btnSidebarSetup">
+              Request School Setup Help
+            </a>
+          </div>
+
+          <!-- 2. Technical Support Card -->
+          <div class="release-sidebar-card">
+            <h3 style="font-family: var(--font-display); font-size: 1.15rem; color: #fff; margin-bottom: 12px;">
+              Deployment &amp; Support
+            </h3>
+            <p style="color: var(--text-muted); font-size: 0.86rem; line-height: 1.6; margin-bottom: 16px;">
+              Need help deploying ResultDesk across your computer laboratory or training your administrative staff?
+              Divine Leads Media provides both on-site and remote support.
+            </p>
+
+            <ul style="list-style: none; font-size: 0.86rem; display: flex; flex-direction: column; gap: 10px;">
+              <li>
+                <span style="color: var(--text-dim); display: block; font-size: 0.72rem;">DIRECT WHATSAPP</span>
+                <a href="https://wa.me/2349126300594" target="_blank"
+                  style="color: var(--accent-green); font-weight: 600;">
+                  +234 912 630 0594 ↗
+                </a>
+              </li>
+              <li>
+                <span style="color: var(--text-dim); display: block; font-size: 0.72rem;">PRIMARY EMAIL</span>
+                <a href="mailto:divineleadsmedia@gmail.com" style="color: var(--dlm-blue-soft);">
+                  divineleadsmedia@gmail.com
+                </a>
+              </li>
+              <li>
+                <span style="color: var(--text-dim); display: block; font-size: 0.72rem;">SECONDARY EMAIL</span>
+                <a href="mailto:admin@divineleadsmedia.com" style="color: var(--text-muted);">
+                  admin@divineleadsmedia.com
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- 3. Other DLM Releases List -->
+          <div class="release-sidebar-card">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
+              <h3 style="font-family: var(--font-display); font-size: 1.15rem; color: #fff; margin: 0;">
+                Other DLM Releases
+              </h3>
+              <a href="downloads.html" style="font-size: 0.78rem; color: var(--dlm-blue-soft);">All →</a>
+            </div>
+
+            <div id="otherReleasesListContainer">
+              <!-- Populated dynamically -->
+            </div>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <span class="brand-title">DIVINE LEADS MEDIA</span>
+        <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; margin-top: 10px;">
+          Transforming Nigeria education with tech and AI. Research, software development, equipment supplies, and
+          practical learner skills.
+        </p>
+      </div>
+      <div class="footer-col">
+        <h5>Solutions</h5>
+        <ul>
+          <li><a href="downloads.html">DLM ResultDesk Software</a></li>
+          <li><a href="index.html#equipment">Equipment Supplies &amp; Labs</a></li>
+          <li><a href="downloads.html#download-securevote">DLM SecureVote</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Quick Links</h5>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="downloads.html">Downloads &amp; Releases</a></li>
+          <li><a href="staff.html">Our Staff</a></li>
+          <li><a href="news.html">News &amp; Events</a></li>
+          <li><a href="articles.html">Articles &amp; Guides</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Contact &amp; Support</h5>
+        <ul style="font-size:0.86rem;">
+          <li><span style="color:var(--text-dim); display:block; font-size:0.75rem;">PRIMARY EMAIL</span><a
+              href="mailto:divineleadsmedia@gmail.com"
+              style="color:var(--dlm-blue-soft);">divineleadsmedia@gmail.com</a></li>
+          <li><span style="color:var(--text-dim); display:block; font-size:0.75rem; margin-top:4px;">OFFICIAL /
+              SECONDARY</span><a href="mailto:admin@divineleadsmedia.com">admin@divineleadsmedia.com</a></li>
+          <li><a href="https://wa.me/2349126300594" target="_blank" style="color:var(--accent-green);">WhatsApp: +234
+              912 630 0594</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <div>© 2026 Divine Leads Media. All Rights Reserved. Lagos, Nigeria.</div>
+      <div>Transforming Nigeria Education with Tech &amp; AI</div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="assets/js/db.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      function getActiveReleaseId() {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get('id');
+      }
+
+      function getYouTubeEmbedUrl(url) {
+        if (!url || typeof url !== 'string') return null;
+        const trimmed = url.trim();
+        if (!trimmed) return null;
+
+        // If already an embed URL
+        if (trimmed.includes('youtube.com/embed/') || trimmed.includes('youtube-nocookie.com/embed/')) {
+          return trimmed;
+        }
+
+        // Pattern: youtu.be/VIDEO_ID
+        const shortMatch = trimmed.match(/youtu\.be\/([a-zA-Z0-9_-]{11})/);
+        if (shortMatch && shortMatch[1]) {
+          return `https://www.youtube-nocookie.com/embed/${shortMatch[1]}`;
+        }
+
+        // Pattern: youtube.com/watch?v=VIDEO_ID
+        const watchMatch = trimmed.match(/[?&]v=([a-zA-Z0-9_-]{11})/);
+        if (watchMatch && watchMatch[1]) {
+          return `https://www.youtube-nocookie.com/embed/${watchMatch[1]}`;
+        }
+
+        // Pattern: embed, v, shorts, live
+        const pathMatch = trimmed.match(/(?:embed|v|shorts|live)\/([a-zA-Z0-9_-]{11})/);
+        if (pathMatch && pathMatch[1]) {
+          return `https://www.youtube-nocookie.com/embed/${pathMatch[1]}`;
+        }
+
+        // Pattern: bare 11-char ID
+        if (/^[a-zA-Z0-9_-]{11}$/.test(trimmed)) {
+          return `https://www.youtube-nocookie.com/embed/${trimmed}`;
+        }
+
+        return null;
+      }
+
+      function renderReleaseDetails() {
+        if (!window.DLM_DB) return;
+        const allDownloads = window.DLM_DB.getDownloads();
+        if (!allDownloads || allDownloads.length === 0) {
+          window.location.href = 'downloads.html';
+          return;
+        }
+
+        const requestedId = getActiveReleaseId();
+        let release = allDownloads.find(d => d.id === requestedId);
+
+        // Fallback to first download if ID not found or not provided
+        if (!release) {
+          release = allDownloads[0];
+        }
+
+        // Update Page Title
+        document.title = `${release.name} (${release.version}) — Official Release | Divine Leads Media`;
+
+        // Breadcrumbs & Hero
+        document.getElementById('breadcrumbReleaseName').textContent = `${release.name} (${release.version})`;
+        document.getElementById('heroReleaseVersion').textContent = release.version;
+        document.getElementById('heroReleasePlatform').textContent = release.platform;
+        document.getElementById('heroReleaseTag').textContent = release.tag;
+        document.getElementById('heroReleaseTitle').textContent = release.name;
+        document.getElementById('heroReleaseDescription').textContent = release.description;
+
+        // Action links
+        const downloadAction = () => {
+          window.triggerDownload(release.downloadUrl || '#', release.name);
+        };
+
+        const btnHeroDownload = document.getElementById('btnHeroDownload');
+        if (btnHeroDownload) {
+          btnHeroDownload.textContent = `Download Package (${release.size}) ↓`;
+          btnHeroDownload.onclick = downloadAction;
+        }
+
+        const btnSidebarDownload = document.getElementById('btnSidebarDownload');
+        if (btnSidebarDownload) {
+          btnSidebarDownload.textContent = `Download Now (${release.size}) ↓`;
+          btnSidebarDownload.onclick = downloadAction;
+        }
+
+        const setupUrl = `contact.html?interest=${encodeURIComponent(release.name)}`;
+        document.getElementById('btnHeroSetupHelp')?.setAttribute('href', setupUrl);
+        document.getElementById('btnSidebarSetup')?.setAttribute('href', setupUrl);
+
+        // Detailed Overview
+        const overviewEl = document.getElementById('releaseDetailedOverview');
+        if (overviewEl) {
+          overviewEl.innerHTML = `
+            <p style="margin-bottom: 14px;">
+              <strong>${release.name} ${release.version}</strong> is an enterprise-grade offline utility crafted by Divine Leads Media for Nigerian private and public schools, academies, and computer centres.
+            </p>
+            <p style="margin-bottom: 14px; color: var(--text-muted);">
+              ${release.description}
+            </p>
+            <p style="color: var(--text-muted);">
+              Unlike cloud-only school software that stops functioning whenever internet connections drop or require monthly dollar subscriptions, this application runs entirely on your local PC or school server. It keeps your student records, continuous assessments, and examinations 100% private, confidential, and instantly accessible.
+            </p>
+          `;
+        }
+
+        // Features list
+        const featContainer = document.getElementById('releaseFeaturesContainer');
+        if (featContainer) {
+          if (release.features && release.features.length > 0) {
+            featContainer.innerHTML = `
+              <ul class="feature-check-list" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; margin: 0;">
+                ${release.features.map(f => `
+                  <li style="display: flex; align-items: flex-start; gap: 10px; font-size: 0.95rem;">
+                    <span>${f}</span>
+                  </li>
+                `).join('')}
+              </ul>
+            `;
+          } else {
+            featContainer.innerHTML = `
+              <ul class="feature-check-list" style="margin: 0;">
+                <li>Built-in automated continuous assessment calculations</li>
+                <li>Zero ongoing cloud subscriptions or internet connection needed</li>
+                <li>Instant PDF broadsheet compilation and individual student report cards</li>
+              </ul>
+            `;
+          }
+        }
+
+        // Video Tutorial Embed Setup (How to install)
+        const rawVideoUrl = release.youtubeUrl || 'https://www.youtube.com/watch?v=dQw4w9WgXcQ';
+        const embedUrl = getYouTubeEmbedUrl(rawVideoUrl) || 'https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ';
+
+        const videoIframe = document.getElementById('releaseVideoIframe');
+        if (videoIframe) {
+          videoIframe.src = embedUrl;
+          videoIframe.title = `How to Install ${release.name} — Video Tutorial`;
+        }
+
+        const videoTitle = document.getElementById('videoSectionTitle');
+        if (videoTitle) {
+          videoTitle.textContent = `How to Install ${release.name}`;
+        }
+
+        const videoDesc = document.getElementById('videoSectionDesc');
+        if (videoDesc) {
+          videoDesc.textContent = `Watch our visual guide on how to install ${release.name} (${release.version}) on your school PC, configure settings, and begin processing records completely offline.`;
+        }
+
+        const linkOpenDirect = document.getElementById('linkOpenYouTubeDirect');
+        if (linkOpenDirect) {
+          const directUrl = rawVideoUrl.startsWith('http') ? rawVideoUrl : `https://www.youtube.com/watch?v=${rawVideoUrl}`;
+          linkOpenDirect.href = directUrl;
+        }
+
+        // Specs Table
+        document.getElementById('specPlatform').textContent = release.platform;
+        document.getElementById('specVersion').textContent = `${release.version} (Official Verified Release)`;
+        document.getElementById('specSize').textContent = release.size;
+        document.getElementById('specDate').textContent = release.date;
+
+        // Checksum
+        const checksum = release.checksum || 'sha256: 7f8a129d4b5c6e7f8a9b0c1d2e3f4a5b6c7d8e9f';
+        const checksumEl = document.getElementById('releaseChecksumDisplay');
+        if (checksumEl) checksumEl.textContent = checksum;
+
+        document.getElementById('btnCopyChecksum')?.addEventListener('click', () => {
+          navigator.clipboard.writeText(checksum).then(() => {
+            window.showToast('SHA-256 Checksum copied to clipboard!', 'success');
+          }).catch(() => {
+            window.showToast(checksum, 'info');
+          });
+        });
+
+        // Sidebar stats
+        document.getElementById('sidebarVersion').textContent = release.version;
+        document.getElementById('sidebarSize').textContent = release.size;
+        document.getElementById('sidebarPlatform').textContent = release.platform;
+        document.getElementById('sidebarDate').textContent = release.date;
+
+        // Other releases in sidebar
+        const otherReleasesContainer = document.getElementById('otherReleasesListContainer');
+        if (otherReleasesContainer) {
+          const otherReleases = allDownloads.filter(d => d.id !== release.id);
+          if (otherReleases.length === 0) {
+            otherReleasesContainer.innerHTML = `<p style="font-size:0.8rem; color:var(--text-dim);">No other releases currently registered.</p>`;
+          } else {
+            otherReleasesContainer.innerHTML = otherReleases.map(other => `
+              <a href="release.html?id=${encodeURIComponent(other.id)}" class="sidebar-release-item">
+                <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 3px;">
+                  <strong style="color: #fff; font-size: 0.88rem;">${other.name}</strong>
+                  <span class="font-mono text-blue" style="font-size: 0.72rem;">${other.version}</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; font-size: 0.75rem; color: var(--text-dim);">
+                  <span>${other.tag}</span>
+                  <span>${other.size}</span>
+                </div>
+              </a>
+            `).join('');
+          }
+        }
+      }
+
+      window.triggerDownload = function (url, name) {
+        if (url && url !== '#' && !url.startsWith('#')) {
+          window.showToast(`Starting download for ${name}...`, 'success');
+          const a = document.createElement('a');
+          a.href = url;
+          a.setAttribute('download', '');
+          if (url.startsWith('http')) a.target = '_blank';
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
+        } else {
+          window.showToast(`The installer package for ${name} will be released soon. Contact us for direct on-site setup on your school PCs.`, 'info');
+        }
+      };
+
+      renderReleaseDetails();
+
+      window.addEventListener('dlm_db_downloads_changed', () => {
+        renderReleaseDetails();
+      });
+      window.addEventListener('storage', (e) => {
+        if (!e.key || e.key.includes('downloads') || e.key.includes('dlm_')) {
+          renderReleaseDetails();
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>

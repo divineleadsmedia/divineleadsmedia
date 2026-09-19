@@ -215,13 +215,38 @@ document.getElementById('articlesSearchInput')?.addEventListener('input', (e) =>
   renderCmsArticlesTable();
 });
 
-window.deleteArticleItem = function(id) {
-  if (confirm('Are you sure you want to permanently delete this research article?')) {
+// Delete Confirmation Helper with In-App Modal
+window.showDeleteConfirm = function(title, message, onConfirm) {
+  const modal = document.getElementById('modalConfirmDelete');
+  if (!modal) {
+    if (confirm(message)) onConfirm();
+    return;
+  }
+  document.getElementById('confirmDeleteTitle').textContent = title || 'Confirm Deletion';
+  document.getElementById('confirmDeleteMessage').textContent = message || 'Are you sure you want to permanently delete this item? This action cannot be undone.';
+  
+  const confirmBtn = document.getElementById('btnDoConfirmDelete');
+  const newBtn = confirmBtn.cloneNode(true);
+  confirmBtn.parentNode.replaceChild(newBtn, confirmBtn);
+  
+  newBtn.addEventListener('click', () => {
+    closeAllModals();
+    onConfirm();
+  });
+  
+  openModal('modalConfirmDelete');
+};
+
+window.deleteArticleItem = function(id, onSuccess = null) {
+  const art = window.DLM_DB.getArticleById(id);
+  const title = art ? art.title : 'this research guide';
+  showDeleteConfirm('Delete Guide', `Are you sure you want to permanently delete "${title}"? This action cannot be undone.`, () => {
     window.DLM_DB.deleteArticle(id);
     window.showToast('Article deleted.', 'success');
     renderCmsArticlesTable();
     updateOverviewStats();
-  }
+    if (typeof onSuccess === 'function') onSuccess();
+  });
 };
 
 // ==================== ARTICLE ROOM STUDIO LOGIC ====================
@@ -229,6 +254,16 @@ let currentArticleTags = [];
 let currentArticleStatus = 'published';
 
 function setupArticleStudio() {
+  // Delete button from Studio
+  document.getElementById('btnArtDeleteFromStudio')?.addEventListener('click', () => {
+    const id = document.getElementById('artStudioId').value;
+    if (id) {
+      window.deleteArticleItem(id, () => {
+        switchToView('articles');
+      });
+    }
+  });
+
   // New Article button from dashboard
   document.getElementById('btnAddNewArticle')?.addEventListener('click', () => {
     openArticleStudio();
@@ -522,6 +557,9 @@ window.openArticleStudio = function(id = null) {
     document.getElementById('artSeoPreviewDesc').textContent = 'Brief summary of what this guide teaches...';
   }
 
+  const delBtn = document.getElementById('btnArtDeleteFromStudio');
+  if (delBtn) delBtn.style.display = id ? 'inline-flex' : 'none';
+
   renderArticleTagChips();
   updateArticleWordCount();
 };
@@ -672,13 +710,16 @@ document.getElementById('newsSearchInput')?.addEventListener('input', (e) => {
   renderCmsNewsTable();
 });
 
-window.deleteNewsItem = function(id) {
-  if (confirm('Are you sure you want to permanently delete this news dispatch?')) {
+window.deleteNewsItem = function(id, onSuccess = null) {
+  const item = window.DLM_DB.getNewsById(id);
+  const title = item ? item.title : 'this news dispatch';
+  showDeleteConfirm('Delete News Dispatch', `Are you sure you want to permanently delete "${title}"? This action cannot be undone.`, () => {
     window.DLM_DB.deleteNews(id);
     window.showToast('News item deleted.', 'success');
     renderCmsNewsTable();
     updateOverviewStats();
-  }
+    if (typeof onSuccess === 'function') onSuccess();
+  });
 };
 
 // ==================== NEWS ROOM STUDIO LOGIC ====================
@@ -686,6 +727,16 @@ let currentNewsTags = [];
 let currentNewsStatus = 'published';
 
 function setupNewsStudio() {
+  // Delete button from News Studio
+  document.getElementById('btnNewsDeleteFromStudio')?.addEventListener('click', () => {
+    const id = document.getElementById('newsStudioId').value;
+    if (id) {
+      window.deleteNewsItem(id, () => {
+        switchToView('news');
+      });
+    }
+  });
+
   document.getElementById('btnAddNewNews')?.addEventListener('click', () => {
     openNewsStudio();
   });
@@ -907,6 +958,9 @@ window.openNewsStudio = function(id = null) {
     updateNewsCoverPreview(defaultImg);
   }
 
+  const delNewsBtn = document.getElementById('btnNewsDeleteFromStudio');
+  if (delNewsBtn) delNewsBtn.style.display = id ? 'inline-flex' : 'none';
+
   renderNewsTagChips();
 };
 
@@ -1044,7 +1098,10 @@ function renderCmsDownloadsTable() {
 
   tbody.innerHTML = downloads.map(dl => `
     <tr>
-      <td><strong>${dl.name}</strong></td>
+      <td>
+        <strong>${dl.name}</strong>
+        ${dl.youtubeUrl ? `<span style="margin-left:6px; font-size:0.75rem; color:#EF4444; background:rgba(239,68,68,0.1); padding:2px 6px; border-radius:4px; border:1px solid rgba(239,68,68,0.3);" title="${dl.youtubeUrl}">▶ Video</span>` : ''}
+      </td>
       <td><span class="version-badge font-mono">${dl.version}</span></td>
       <td>${dl.platform}</td>
       <td>${dl.tag}</td>
@@ -1069,6 +1126,7 @@ window.editDownloadItem = function(id) {
   document.getElementById('dlFormSize').value = item.size;
   document.getElementById('dlFormDate').value = item.date;
   document.getElementById('dlFormUrl').value = item.downloadUrl || '#';
+  document.getElementById('dlFormYoutube').value = item.youtubeUrl || '';
   document.getElementById('dlFormDesc').value = item.description || '';
   document.getElementById('dlFormFeatures').value = (item.features || []).join('\n');
 
@@ -1077,18 +1135,21 @@ window.editDownloadItem = function(id) {
 };
 
 window.deleteDownloadItem = function(id) {
-  if (confirm('Are you sure you want to permanently delete this software release?')) {
+  const item = window.DLM_DB.getDownloadById(id);
+  const name = item ? item.name : 'this software release';
+  showDeleteConfirm('Delete Software Release', `Are you sure you want to permanently delete "${name}"? This action cannot be undone.`, () => {
     window.DLM_DB.deleteDownload(id);
     window.showToast('Release package deleted.', 'success');
     renderCmsDownloadsTable();
     updateOverviewStats();
-  }
+  });
 };
 
 function setupDownloadForm() {
   document.getElementById('btnAddNewDownload')?.addEventListener('click', () => {
     document.getElementById('formDownload').reset();
     document.getElementById('dlFormId').value = '';
+    document.getElementById('dlFormYoutube').value = '';
     document.getElementById('dlFormDate').value = new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
     document.getElementById('dlModalTitle').textContent = 'Register New Software Release';
     openModal('modalDownloadForm');
@@ -1108,6 +1169,7 @@ function setupDownloadForm() {
       size: document.getElementById('dlFormSize').value.trim(),
       date: document.getElementById('dlFormDate').value,
       downloadUrl: document.getElementById('dlFormUrl').value.trim() || '#download',
+      youtubeUrl: document.getElementById('dlFormYoutube').value.trim() || undefined,
       description: document.getElementById('dlFormDesc').value.trim(),
       features: featuresArray
     };
@@ -1140,12 +1202,15 @@ function renderCmsWebinarsTable() {
 }
 
 window.deleteWebinarItem = function(id) {
-  if (confirm('Delete this webinar from the homepage schedule?')) {
+  const webinars = window.DLM_DB.getWebinars();
+  const item = webinars.find(w => w.id === id);
+  const title = item ? item.title : 'this webinar';
+  showDeleteConfirm('Delete Webinar', `Are you sure you want to remove "${title}" from the homepage schedule?`, () => {
     window.DLM_DB.deleteWebinar(id);
     window.showToast('Webinar removed.', 'success');
     renderCmsWebinarsTable();
     updateOverviewStats();
-  }
+  });
 };
 
 function setupWebinarForm() {
@@ -1331,14 +1396,18 @@ function setupBackupHandlers() {
   });
 
   document.getElementById('btnResetDefaults')?.addEventListener('click', () => {
-    if (confirm('WARNING: This will reset all news, articles, and releases back to initial seed data. Continue?')) {
-      window.DLM_DB.resetToDefaults();
-      window.showToast('Data reset to original factory seeds.', 'success');
-      updateOverviewStats();
-      renderCmsNewsTable();
-      renderCmsArticlesTable();
-      renderCmsDownloadsTable();
-      renderCmsWebinarsTable();
-    }
+    showDeleteConfirm(
+      'Reset All Content & Releases',
+      'WARNING: This will reset all news, articles, downloads, and webinar schedules back to initial factory seed data. Are you sure you want to proceed?',
+      () => {
+        window.DLM_DB.resetToDefaults();
+        window.showToast('Data reset to original factory seeds.', 'success');
+        updateOverviewStats();
+        renderCmsNewsTable();
+        renderCmsArticlesTable();
+        renderCmsDownloadsTable();
+        renderCmsWebinarsTable();
+      }
+    );
   });
 }

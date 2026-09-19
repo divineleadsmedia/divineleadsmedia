@@ -198,6 +198,9 @@
             <button type="button" class="btn btn-primary btn-sm" id="btnArtPublish">
               Publish Guide →
             </button>
+            <button type="button" class="btn btn-sm" id="btnArtDeleteFromStudio" style="display:none; background:rgba(239,68,68,0.2); border:1px solid #EF4444; color:#EF4444; padding:6px 12px;" title="Delete this guide">
+              🗑 Delete
+            </button>
             <button type="button" class="btn btn-secondary btn-sm" id="btnToggleArtInspector" title="Toggle Settings">
               ⚙
             </button>
@@ -473,6 +476,9 @@
             </button>
             <button type="button" class="btn btn-primary btn-sm" id="btnNewsPublish">
               Publish Dispatch →
+            </button>
+            <button type="button" class="btn btn-sm" id="btnNewsDeleteFromStudio" style="display:none; background:rgba(239,68,68,0.2); border:1px solid #EF4444; color:#EF4444; padding:6px 12px;" title="Delete this dispatch">
+              🗑 Delete
             </button>
             <button type="button" class="btn btn-secondary btn-sm" id="btnToggleNewsInspector" title="Toggle Settings">
               ⚙
@@ -785,6 +791,13 @@
           </small>
         </div>
         <div class="form-group">
+          <label class="form-label">YouTube Tutorial / "How to Install" Video Link</label>
+          <input type="text" id="dlFormYoutube" class="form-control" placeholder="e.g. https://www.youtube.com/watch?v=... or https://youtu.be/...">
+          <small style="color:var(--text-dim); font-size:0.75rem; display:block; margin-top:4px;">
+            Paste any YouTube video link. It will automatically embed as a video guide on the dedicated release page.
+          </small>
+        </div>
+        <div class="form-group">
           <label class="form-label">Description *</label>
           <textarea id="dlFormDesc" class="form-control" rows="2" required placeholder="What does this package do..."></textarea>
         </div>
@@ -835,6 +848,29 @@
         </div>
         <button type="submit" class="btn btn-primary" style="width:100%;">Schedule Event →</button>
       </form>
+    </div>
+  </div>
+
+  <!-- Delete Confirmation Modal -->
+  <div class="modal-overlay" id="modalConfirmDelete">
+    <div class="modal-container" style="max-width: 440px; text-align: center; padding: 32px 28px;">
+      <div style="width: 56px; height: 56px; border-radius: 50%; background: rgba(239, 68, 68, 0.15); border: 2px solid #EF4444; color: #EF4444; font-size: 1.6rem; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px;">
+        🗑
+      </div>
+      <h3 id="confirmDeleteTitle" style="font-family: var(--font-display); font-size: 1.35rem; color: #fff; margin-bottom: 8px;">
+        Confirm Deletion
+      </h3>
+      <p id="confirmDeleteMessage" style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.5; margin-bottom: 24px;">
+        Are you sure you want to permanently delete this item? This action cannot be undone.
+      </p>
+      <div style="display: flex; gap: 12px; justify-content: center;">
+        <button type="button" class="btn btn-secondary modal-close-btn" style="position: static; width: auto; height: auto; border-radius: var(--radius-sm); padding: 9px 20px;">
+          Cancel
+        </button>
+        <button type="button" class="btn" id="btnDoConfirmDelete" style="background: #EF4444; color: #fff; padding: 9px 22px; font-weight: 600;">
+          Yes, Delete
+        </button>
+      </div>
     </div>
   </div>
 
