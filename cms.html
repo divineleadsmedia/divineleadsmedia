@@ -747,8 +747,11 @@
           </div>
         </div>
         <div class="form-group">
-          <label class="form-label">Download Link or Anchor</label>
-          <input type="text" id="dlFormUrl" class="form-control" placeholder="#download-resultdesk">
+          <label class="form-label">Download File URL (Local path or Cloud link)</label>
+          <input type="text" id="dlFormUrl" class="form-control" placeholder="assets/downloads/ResultDesk-Setup.exe or https://github.com/.../Setup.exe">
+          <small style="color:var(--text-dim); font-size:0.75rem; display:block; margin-top:4px;">
+            Put local file in <code>assets/downloads/</code> or paste a GitHub Releases / Google Drive link.
+          </small>
         </div>
         <div class="form-group">
           <label class="form-label">Description *</label>

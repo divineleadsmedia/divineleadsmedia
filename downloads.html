@@ -197,7 +197,7 @@
             </div>
 
             <div style="display:flex; flex-direction:column; gap:10px; align-items:flex-end;">
-              <button class="btn btn-primary" onclick="triggerDownload('${item.name}')">
+              <button class="btn btn-primary" onclick="triggerDownload('${(item.downloadUrl || '').replace(/'/g, "\\'")}', '${item.name.replace(/'/g, "\\'")}')">
                 Download Now ↓
               </button>
               <a href="contact.html?interest=${encodeURIComponent(item.name)}" class="btn btn-secondary btn-sm">
@@ -208,8 +208,19 @@
         `).join('');
       }
 
-      window.triggerDownload = function(name) {
-        window.showToast(`Starting download for ${name}...`, 'success');
+      window.triggerDownload = function(url, name) {
+        if (url && url !== '#' && !url.startsWith('#')) {
+          window.showToast(`Starting download for ${name}...`, 'success');
+          const a = document.createElement('a');
+          a.href = url;
+          a.setAttribute('download', '');
+          if (url.startsWith('http')) a.target = '_blank';
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
+        } else {
+          window.showToast(`The installer package for ${name} will be released soon. Click "Request Setup Help" for instant deployment on your school computers.`, 'info');
+        }
       };
 
       document.querySelectorAll('#downloadCategoryFilters button').forEach(btn => {
